@@ -390,15 +390,15 @@ const CONFIG = {
           name: "Texture pack",
           items: [
             {
-              title: "Shader Siêu Thực",
+              title: "Actions and stuff",
               subtitle: "Gói đồ họa Bedrock",
-              description: "Giúp game đẹp và sáng sủa hơn.",
-              image: "",
-              source: "",
+              description: "Gói hoạt ảnh mà bạn không ngờ mình cần: Làm sống động thế giới của bạn với các hoạt ảnh, hiệu ứng hạt, họa tiết mới và hơn thế nữa!",
+              image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/85b9d40c-405e-4d79-8912-b2d5af3bdd74/actionsandstuff_Thumbnail_0.jpg",
+              source: "https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/actions--stuff-1.13/61c7a786-d7ad-49e0-a710-817121cd9795",
               actions: [
                 {
                   label: "Tải xuống",
-                  url: "#",
+                  url: "https://drive.google.com/file/d/1fQJuGdtmEzbzCBCCdJdw3S6xad_3Jpf1/view?usp=drivesdk",
                   primary: true
                 }
               ]
@@ -664,7 +664,16 @@ function closeWelcomeModal() {
 }
 
 setTimeout(() => {
+  if(CONFIG.welcome && CONFIG.welcome.active === false) return;
   wModal.hidden = false;
+  if(CONFIG.welcome) {
+    const h2 = wModal.querySelector("h2");
+    const p = wModal.querySelector("p");
+    const b = wModal.querySelector(".btn.main");
+    if(h2) h2.innerText = CONFIG.welcome.title;
+    if(p) p.innerText = CONFIG.welcome.desc;
+    if(b) b.innerText = CONFIG.welcome.btn;
+  }
   if (!reduce) {
     wModal.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 300, easing: "ease-out" });
     wModal.querySelector(".modal-box").animate([{ opacity: 0, transform: "scale(.9) translateY(20px)" }, { opacity: 1, transform: "none" }], { duration: 500, easing: SPRING });
