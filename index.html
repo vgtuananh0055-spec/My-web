@@ -685,7 +685,7 @@ function view() {
     fetch("https://api.counterapi.dev/v1/kaitouu_page_1307/visits/up")
       .then(r => r.json())
       .then(d => { const c = document.getElementById("live-view-count"); if(c) c.textContent = d.count.toLocaleString(); })
-      .catch(e => { const c = document.getElementById("live-view-count"); if(c) c.textContent = "1,234"; });
+      .catch(e => { const c = document.getElementById("live-view-count"); if(c) c.textContent = "71"; });
   } else {
     topBar = el("label", "search"); topBar.innerHTML = svg("search", 22);
     const inp = el("input"); inp.type = "search"; inp.placeholder = "Tìm trong " + tab.label + "…"; inp.value = S.q;
