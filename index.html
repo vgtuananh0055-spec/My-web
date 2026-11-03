@@ -203,132 +203,270 @@ const CONFIG = {
   fallbackImage: "",
   zalithRepo: "ZalithLauncher/ZalithLauncher2",
   tabs: {
-
-    // ==========================================
-    // 1. TAB JAVA
-    // ==========================================
-    java: { 
-      label: "Java", 
-      title: "Minecraft Java", 
-      sub: "Launcher, plugin, config, map, model (chỉ dành cho server)", 
-      grad: ["#7c5cff", "#1b1050"], 
-      bannerImg: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft%20_Holiday_Game_Drop_2025_OV-PMP_1280x720.jpg", 
-      iconImg: "", 
-
+    java: {
+      label: "Java",
+      title: "Minecraft Java",
+      sub: "Launcher, plugin, config, map, model (chỉ dành cho server)",
+      grad: [
+        "#7c5cff",
+        "#1b1050"
+      ],
+      bannerImg: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Minecraft%20_Holiday_Game_Drop_2025_OV-PMP_1280x720.jpg",
+      iconImg: "",
       folders: [
-        { id: "launcher", name: "Launcher java", items: [
-          { name: "ZalithLauncher 2",
-            by: "ZalithLauncher",
-            desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
-            zalith: true, github: "https://github.com/ZalithLauncher/ZalithLauncher2",
-            image: "https://github.com/ZalithLauncher.png", source: "https://github.com/ZalithLauncher/ZalithLauncher2" },
-            
-          { name: "Kai-Launcher ",
-            by: "KaiTouu",
-            desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
-            zalith: true, github: "https://github.com/vgtuananh0055-spec/KaiLauncher",
-            image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png", source: "https://github.com/vgtuananh0055-spec/KaiLauncher/releases/download/Launcher/Kai.Launcher_r1.0.0.apk" },            
-        ]},
-        { id: "plugin", name: "Plugin", items: [
-          {
-            title: 'ECO Pets', subtitle: 'Plugin Minecraft',
-            description: 'Plugin thú cưng.\n\nCho phép người chơi triệu hồi thú cưng đi theo, hỗ trợ tùy chỉnh thông số và kỹ năng qua YAML file.',
-            image: 'https://img.builtbybit.com/41S6mUIlTgmz1fKJlB-j5GoMfsVkDx5F4bzS4vVh66Y/resize:fill:2000/format:webp/aHR0cHM6Ly9odWIuYXV4aWxvci5pby9hcGkvcHVibGljL21lZGlhL2Vjb3BldHMtaGVhZGVy',
-            source: 'https://builtbybit.com/resources/ecopets.24165/',
-            actions: [{label: 'Tải xuống', url: 'https://example.com/download', primary: true}]
-          },
-          {
-            title: 'AdvancedEnchantments', subtitle: 'Plugin Minecraft',
-            description: 'Plugin enchant.\n\nHơn 400 Phù phép Tùy chỉnh - Hỗ trợ Bàn phù phép & Đe - Hơn 20 Vật phẩm, hỗ trợ tùy chỉnh thông số và kỹ năng qua YAML file.',
-            image: 'https://img.builtbybit.com/rN8kntKxWQ3BXSTbvovyaw5idZ6GvAjRGTqpGuGddyA/resize:fill:2000/format:webp/aHR0cHM6Ly9hZHZhbmNlZHBsdWdpbnMubmV0L2ltZy9lemdpZi0zLTcwNTlmMzQyOGYuZ2lm',
-            source: 'https://builtbybit.com/resources/advancedenchantments-450-enchantments.29443/',
-            actions: [{label: 'Tải xuống', url: 'https://example.com/download', primary: true}]
-          }
-        ]},
-        { id: "config", name: "Config", items: [
-          {
-            title: 'Config Mẫu', subtitle: 'Tùy chỉnh máy chủ', description: 'Cấu hình tối ưu hóa cho server.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]},
-        { id: "map", name: "Map", items: [
-          {
-            title: 'Map Sinh Tồn', subtitle: 'Thế giới Java', description: 'Bản đồ sinh tồn tùy chỉnh đẹp mắt.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]},
-        { id: "model", name: "Model", items: [
-          {
-            title: 'Vũ Khí 3D Model', subtitle: 'Gói tài nguyên', description: 'Thêm vũ khí 3D cực xịn xò vào game.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]}
+        {
+          id: "launcher",
+          name: "Launcher java",
+          items: [
+            {
+              name: "ZalithLauncher 2",
+              by: "ZalithLauncher",
+              desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
+              zalith: true,
+              github: "https://github.com/ZalithLauncher/ZalithLauncher2",
+              image: "https://github.com/ZalithLauncher.png",
+              source: "https://github.com/ZalithLauncher/ZalithLauncher2"
+            },
+            {
+              name: "Kai-Launcher ",
+              by: "KaiTouu",
+              desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
+              zalith: true,
+              github: "https://github.com/vgtuananh0055-spec/KaiLauncher",
+              image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png",
+              source: "https://github.com/vgtuananh0055-spec/KaiLauncher/releases/download/Launcher/Kai.Launcher_r1.0.0.apk"
+            }
+          ]
+        },
+        {
+          id: "plugin",
+          name: "Plugin",
+          items: [
+            {
+              title: "ECO Pets",
+              subtitle: "Plugin Minecraft",
+              description: "Plugin thú cưng.\n\nCho phép người chơi triệu hồi thú cưng đi theo, hỗ trợ tùy chỉnh thông số và kỹ năng qua YAML file.",
+              image: "https://img.builtbybit.com/41S6mUIlTgmz1fKJlB-j5GoMfsVkDx5F4bzS4vVh66Y/resize:fill:2000/format:webp/aHR0cHM6Ly9odWIuYXV4aWxvci5pby9hcGkvcHVibGljL21lZGlhL2Vjb3BldHMtaGVhZGVy",
+              source: "https://builtbybit.com/resources/ecopets.24165/",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://example.com/download",
+                  primary: true
+                }
+              ]
+            },
+            {
+              title: "AdvancedEnchantments",
+              subtitle: "Plugin Minecraft",
+              description: "Plugin enchant.\n\nHơn 400 Phù phép Tùy chỉnh - Hỗ trợ Bàn phù phép & Đe - Hơn 20 Vật phẩm, hỗ trợ tùy chỉnh thông số và kỹ năng qua YAML file.",
+              image: "https://img.builtbybit.com/rN8kntKxWQ3BXSTbvovyaw5idZ6GvAjRGTqpGuGddyA/resize:fill:2000/format:webp/aHR0cHM6Ly9hZHZhbmNlZHBsdWdpbnMubmV0L2ltZy9lemdpZi0zLTcwNTlmMzQyOGYuZ2lm",
+              source: "https://builtbybit.com/resources/advancedenchantments-450-enchantments.29443/",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://example.com/download",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "config",
+          name: "Config",
+          items: [
+            {
+              title: "Config Mẫu",
+              subtitle: "Tùy chỉnh máy chủ",
+              description: "Cấu hình tối ưu hóa cho server.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "map",
+          name: "Map",
+          items: [
+            {
+              title: "Map Sinh Tồn",
+              subtitle: "Thế giới Java",
+              description: "Bản đồ sinh tồn tùy chỉnh đẹp mắt.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "model",
+          name: "Model",
+          items: [
+            {
+              title: "Vũ Khí 3D Model",
+              subtitle: "Gói tài nguyên",
+              description: "Thêm vũ khí 3D cực xịn xò vào game.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
-
-    // ==========================================
-    // 2. TAB BEDROCK 
-    // ==========================================
-    bedrock: { 
-      label: "Bedrock", 
-      title: "Minecraft Bedrock", 
-      sub: "Addon, map, texture pack, mashups, skin", 
-      grad: ["#ff5d8f", "#4a0f2b"], 
-      bannerImg: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Carousel-Card_SGD-26_1280x720.jpg", 
-      iconImg: "", 
-
+    bedrock: {
+      label: "Bedrock",
+      title: "Minecraft Bedrock",
+      sub: "Addon, map, texture pack, mashups, skin",
+      grad: [
+        "#ff5d8f",
+        "#4a0f2b"
+      ],
+      bannerImg: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Vanilla-PMP_Carousel-Card_SGD-26_1280x720.jpg",
+      iconImg: "",
       folders: [
-        { id: "addon", name: "Addon", items: [
-          {
-            title: 'Vampire Addon', subtitle: 'Addon Sinh Tồn Bedrock',
-            description: 'Addon thêm các loại quái vật ma cà rồng và kỹ năng siêu phàm.',
-            image: '', source: 'https://mcpedl.com/',
-            actions: [{label: 'Tải xuống (Mcpack)', url: '#', primary: true}]
-          }
-        ]},
-        { id: "map", name: "Map", items: [
-          {
-            title: 'Map Thành Phố', subtitle: 'Thế giới Bedrock', description: 'Khám phá thành phố hiện đại trong Bedrock.',
-            image: '', source: '', actions: [{label: 'Tải về (Mcworld)', url: '#', primary: true}]
-          }
-        ]},
-        { id: "texture", name: "Texture pack", items: [
-          {
-            title: 'Shader Siêu Thực', subtitle: 'Gói đồ họa Bedrock', description: 'Giúp game đẹp và sáng sủa hơn.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]},
-        { id: "mashups", name: "Mashups", items: [
-          {
-            title: 'Mashup Thần Thoại', subtitle: 'Gói nội dung', description: 'Gói Mashup với chủ đề thần thoại Hy Lạp.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]},
-        { id: "skin", name: "Skin", items: [
-          {
-            title: 'Skin Anime Pack', subtitle: 'Trang phục', description: 'Bộ sưu tập skin các nhân vật anime.',
-            image: '', source: '', actions: [{label: 'Tải xuống', url: '#', primary: true}]
-          }
-        ]}
+        {
+          id: "addon",
+          name: "Addon",
+          items: []
+        },
+        {
+          id: "map",
+          name: "Map",
+          items: [
+            {
+              title: "Map Thành Phố",
+              subtitle: "Thế giới Bedrock",
+              description: "Khám phá thành phố hiện đại trong Bedrock.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải về (Mcworld)",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "texture",
+          name: "Texture pack",
+          items: [
+            {
+              title: "Shader Siêu Thực",
+              subtitle: "Gói đồ họa Bedrock",
+              description: "Giúp game đẹp và sáng sủa hơn.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "mashups",
+          name: "Mashups",
+          items: [
+            {
+              title: "Mashup Thần Thoại",
+              subtitle: "Gói nội dung",
+              description: "Gói Mashup với chủ đề thần thoại Hy Lạp.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          id: "skin",
+          name: "Skin",
+          items: [
+            {
+              title: "Skin Anime Pack",
+              subtitle: "Trang phục",
+              description: "Bộ sưu tập skin các nhân vật anime.",
+              image: "",
+              source: "",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "#",
+                  primary: true
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
-
-    // ==========================================
-    // 3. TAB THÔNG TIN
-    // ==========================================
-    info: { 
-      label: "Thông tin", 
-      title: "Thông tin", 
-      sub: "Theo dõi mình ở các kênh này", 
-      grad: ["#22d3c5", "#0b2f45"], 
-      bannerImg: "", 
-      iconImg: "", 
-
+    info: {
+      label: "Thông tin",
+      title: "Thông tin",
+      sub: "Theo dõi mình ở các kênh này",
+      grad: [
+        "#22d3c5",
+        "#0b2f45"
+      ],
+      bannerImg: "",
+      iconImg: "",
       links: [
-        { name: "Facebook", app: "facebook", desc: "Trang cá nhân",  url: "#" },
-        { name: "TikTok",   app: "tiktok",   desc: "@tunkt_2005",    url: "#" },
-        { name: "Telegram", app: "telegram", desc: "@Ismekaitou",    url: "#" },
-        { name: "YouTube",  app: "youtube",  desc: "@kaitouaonhayy", url: "#" }
+        {
+          name: "Facebook",
+          app: "facebook",
+          desc: "Trang cá nhân",
+          url: "#"
+        },
+        {
+          name: "TikTok",
+          app: "tiktok",
+          desc: "@tunkt_2005",
+          url: "#"
+        },
+        {
+          name: "Telegram",
+          app: "telegram",
+          desc: "@Ismekaitou",
+          url: "#"
+        },
+        {
+          name: "YouTube",
+          app: "youtube",
+          desc: "@kaitouaonhayy",
+          url: "#"
+        }
       ]
     }
   }
