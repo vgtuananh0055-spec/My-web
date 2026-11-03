@@ -217,10 +217,17 @@ const CONFIG = {
 
       folders: [
         { id: "launcher", name: "Launcher java", items: [
-          { name: "ZalithLauncher 2", by: "ZalithLauncher",
+          { name: "ZalithLauncher 2",
+            by: "ZalithLauncher",
             desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
             zalith: true, github: "https://github.com/ZalithLauncher/ZalithLauncher2",
-            image: "https://github.com/ZalithLauncher.png", source: "https://github.com/ZalithLauncher/ZalithLauncher2" }
+            image: "https://github.com/ZalithLauncher.png", source: "https://github.com/ZalithLauncher/ZalithLauncher2" },
+            
+          { name: "Kai-Launcher ",
+            by: "KaiTouu",
+            desc: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
+            zalith: true, github: "https://github.com/vgtuananh0055-spec/KaiLauncher",
+            image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png", source: "https://github.com/vgtuananh0055-spec/KaiLauncher/releases/download/Launcher/Kai.Launcher_r1.0.0.apk" },            
         ]},
         { id: "plugin", name: "Plugin", items: [
           {
@@ -685,7 +692,7 @@ function view() {
     fetch("https://api.counterapi.dev/v1/kaitouu_page_1307/visits/up")
       .then(r => r.json())
       .then(d => { const c = document.getElementById("live-view-count"); if(c) c.textContent = d.count.toLocaleString(); })
-      .catch(e => { const c = document.getElementById("live-view-count"); if(c) c.textContent = "71"; });
+      .catch(e => { const c = document.getElementById("live-view-count"); if(c) c.textContent = "92"; });
   } else {
     topBar = el("label", "search"); topBar.innerHTML = svg("search", 22);
     const inp = el("input"); inp.type = "search"; inp.placeholder = "Tìm trong " + tab.label + "…"; inp.value = S.q;
