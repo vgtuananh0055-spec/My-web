@@ -22,6 +22,8 @@
   --dock-p: 6px;
   --radius: 24px;
   --font-family: 'Lexend', system-ui, sans-serif;
+  --text-g1: #ffffff;
+  --text-g2: #ffffff;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 body { background: var(--bg); color: var(--text); font: 400 16px/1.5 var(--font-family); -webkit-font-smoothing: antialiased; }
@@ -72,7 +74,13 @@ body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-event
 .hero .row { position: relative; z-index: 1; display: flex; align-items: center; gap: 14px; min-width: 0; width: 100%;}
 .tile { display: grid; place-items: center; width: 76px; height: 76px; border-radius: calc(var(--radius) - 4px); flex: none; color: #fff; overflow: hidden; }
 
-.hero h1 { font-size: 24px; line-height: 1.25; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.5); font-family: var(--font-family); }
+/* CHỮ GRADIENT CHO TIÊU ĐỀ BANNER */
+.hero h1 { 
+  font-size: 24px; line-height: 1.25; font-weight: 700; font-family: var(--font-family); 
+  background: linear-gradient(135deg, var(--text-g1), var(--text-g2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
 .hero p { font-size: 14px; color: rgba(255,255,255,.85); }
 .hero .by { display: flex; align-items: center; gap: 10px; margin-top: 6px; font-size: 14px; color: rgba(255,255,255,.9); font-weight: 500;}
 .count { font-size: 12px; padding: 2px 10px; border-radius: 99px; background: rgba(255,255,255,.2); backdrop-filter: blur(4px); }
@@ -101,8 +109,8 @@ button.card { width: 100%; }
 .body p { color: var(--muted); font-size: 13px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .mini { position: absolute; right: 14px; bottom: 14px; color: var(--muted); display: flex; }
 
-.card.wide { grid-column: 1/-1; display: flex; gap: 14px; align-items: flex-start; }
-.wide .thumb { width: 96px; aspect-ratio: 1; border-radius: calc(var(--radius) - 6px); flex: none; }
+.card.wide { grid-column: 1/-1; display: flex; gap: 16px; align-items: flex-start; padding: 18px; }
+.wide .thumb { width: 72px; aspect-ratio: 1; border-radius: 16px; flex: none; }
 .wide .body { flex: 1; min-width: 0; padding: 0; }
 .wide .body p { -webkit-line-clamp: 4; margin-top: 6px; }
 
@@ -430,7 +438,7 @@ const CONFIG = {
     active: true,
     title: "Hello - KaiTouu đây",
     desc: "Hiện tại web vừa được khởi chạy và đang được cục viễn thông với cục an ninh mạng xét duyệt nên lâu lâu sẽ có thông báo đó nhá anh em thông cảm",
-    btn: ""
+    btn: "Đã hiểu & Tiếp tục"
   }
 };
 /* ===== HẾT PHẦN SỬA ===== */
@@ -445,6 +453,8 @@ if (CONFIG.ui) {
   if(CONFIG.ui.dockPadding) r.setProperty('--dock-p', CONFIG.ui.dockPadding + 'px');
   if(CONFIG.ui.borderRadius) r.setProperty('--radius', CONFIG.ui.borderRadius + 'px');
   if(CONFIG.ui.fontFamily) r.setProperty('--font-family', `'${CONFIG.ui.fontFamily}', system-ui, sans-serif`);
+  if(CONFIG.ui.titleGrad1) r.setProperty('--text-g1', CONFIG.ui.titleGrad1);
+  if(CONFIG.ui.titleGrad2) r.setProperty('--text-g2', CONFIG.ui.titleGrad2);
 }
 
 const ICON = {
@@ -592,7 +602,10 @@ setTimeout(() => {
   
   $("w-title").innerText = wUI.title || "Thông báo";
   $("w-desc").innerText = wUI.desc || "Nội dung...";
-  $("w-btn").innerText = wUI.btn || "Xác nhận";
+  
+  // TỰ ĐỘNG ĐIỀN NÚT NẾU ĐỂ TRỐNG
+  $("w-btn").innerText = wUI.btn || "Đã hiểu & Tiếp tục"; 
+  $("w-btn").style.display = 'inline-flex';
   
   wModal.hidden = false;
   if (!reduce) {
