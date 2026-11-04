@@ -709,6 +709,48 @@ dModal.addEventListener("click", e => { if (e.target === dModal) closeDetailModa
 function itemCard(i) {
   const by = i.by || CONFIG.name;
   
+  if (i.zalith) {
+    const c = el("article", "card wide"), b = el("div", "body"); 
+    
+    // Bọc lót: Admin có thể lưu dưới dạng title/description thay vì name/desc
+    const itemName = i.title || i.name || "Không tên";
+    const itemDesc = i.description || i.desc || "";
+    
+    b.append(el("b", "", itemName), el("small", "", i.subtitle || "by " + by));
+    if (itemDesc) b.append(el("p", "", itemDesc));
+    
+    const acts = el("div", "acts");
+    
+    // TÌM LINK TẢI BẤT KỂ ADMIN LƯU VÀO BIẾN NÀO (source, url, hoặc mảng actions)
+    let downloadLink = i.source || i.url;
+    if (!downloadLink && i.actions && i.actions.length > 0) {
+      downloadLink = i.actions[0].url;
+    }
+    
+    const d = el("a", "btn main"); 
+    ext(d, downloadLink); 
+    d.innerHTML = svg("dl", 18); 
+    d.append(el("span", "", "Tải bản mới nhất"));
+    
+    // TÌM LINK GITHUB
+    let gitLink = i.github;
+    if (!gitLink && i.actions && i.actions.length > 1) {
+      gitLink = i.actions[1].url;
+    }
+    
+    if (gitLink) {
+      const g = el("a", "btn outline"); 
+      ext(g, gitLink); 
+      g.innerHTML = svg("out", 18); 
+      g.append(el("span", "", "GitHub"));
+      acts.append(d, g);
+    } else {
+      acts.append(d);
+    }
+    
+    b.append(acts); c.append(thumb(i), b); return c;
+  }
+  
   if (i.title) {
     const c = el("button", "card"); c.onclick = () => openDetailModal(i);
     const b = el("div", "body"); b.append(el("b", "", i.title), el("small", "", i.subtitle || by));
@@ -716,27 +758,6 @@ function itemCard(i) {
     const m = el("span", "mini"); m.innerHTML = svg("layers", 20); b.append(m);
     c.append(thumb({ name: i.title, image: i.image }, i._f), b); 
     c.querySelector(".thumb").removeAttribute("data-view"); return c;
-  }
-  
-  if (i.zalith) {
-    const c = el("article", "card wide"), b = el("div", "body"); 
-    b.append(el("b", "", i.name), el("small", "", "by " + by));
-    if (i.desc) b.append(el("p", "", i.desc));
-    
-    const acts = el("div", "acts");
-    
-    // Nút tải liên kết trực tiếp không mở popup
-    const d = el("a", "btn main"); 
-    ext(d, i.source); 
-    d.innerHTML = svg("dl", 18); 
-    d.append(el("span", "", "Tải bản mới nhất"));
-    
-    const g = el("a", "btn outline"); 
-    ext(g, i.github); 
-    g.innerHTML = svg("out", 18); 
-    g.append(el("span", "", "GitHub"));
-    
-    acts.append(d, g); b.append(acts); c.append(thumb(i), b); return c;
   }
   
   const c = el("a", "card"); ext(c, i.url);
