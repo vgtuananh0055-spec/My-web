@@ -155,7 +155,7 @@ a.card:active, button.card:active, .chip:active, .btn:active { opacity: 1; trans
 .viewer { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 64px 16px calc(24px + env(safe-area-inset-bottom,0px)); background: rgba(8,6,16,.74); -webkit-backdrop-filter: blur(18px) saturate(150%); backdrop-filter: blur(18px) saturate(150%); cursor: zoom-out; }
 .viewer[hidden] { display: none; }
 .viewer figure { display: grid; gap: 14px; justify-items: center; max-width: 100%; margin: 0; }
-.viewer img { display: block; min-width: min(80vw, 360px); max-width: min(92vw, 900px); max-height: 74vh; object-fit: contain; border-radius: 26px; border: 1px solid var(--edge); background: rgba(255,255,255,.06); box-shadow: inset 0 1px 1px rgba(255,255,255,.4), 0 24px 60px rgba(0,0,0,.55); }
+.viewer img, .viewer video { display: block; min-width: min(80vw, 360px); max-width: min(92vw, 900px); max-height: 74vh; object-fit: contain; border-radius: 26px; border: 1px solid var(--edge); background: rgba(255,255,255,.06); box-shadow: inset 0 1px 1px rgba(255,255,255,.4), 0 24px 60px rgba(0,0,0,.55); }
 .vcap { max-width: 100%; padding: 8px 18px; border-radius: 999px; font-size: 15px; font-weight: 500; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .vclose { position: absolute; top: calc(14px + env(safe-area-inset-top,0px)); right: 14px; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; z-index: 10; }
 
@@ -202,7 +202,7 @@ body { background: url('https://i.pinimg.com/736x/9e/d3/db/9ed3dbf6b950bfaf991d5
     <button class="vclose" type="button" aria-label="Đóng" onclick="closeDetailModal()">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
-    <img id="m-img" class="modal-img" alt="Bìa" src="">
+    <div id="m-media" class="modal-img" style="background:#000; position:relative; overflow:hidden;"></div>
     <div class="m-body">
       <h2 id="m-title" class="m-title"></h2>
       <p id="m-sub" class="m-sub"></p>
@@ -571,18 +571,27 @@ function fb(name, person) {
   const x = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='" + (person ? "0 0 200 200" : "0 0 320 180") + "'><defs>" + g + "</defs><rect width='100%' height='100%' fill='url(#g)'/>" + body + "</svg>";
   return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(x);
 }
+
 function pic(src, name, person) {
+  if (src && src.split('?')[0].toLowerCase().endsWith('.mp4')) {
+    const v = document.createElement('video');
+    v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true;
+    v.style.cssText = "position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;";
+    v.src = src; return v;
+  }
   const img = new Image(); img.alt = ""; img.decoding = "async"; img.draggable = false; img.referrerPolicy = "no-referrer";
   if (!person) img.loading = "lazy";
   img.onload = () => img.classList.add("ok"); img.onerror = () => { img.onerror = null; img.src = fb(name, person); };
   img.src = src || fb(name, person); return img;
 }
+
 function thumb(i, label) {
   const t = el("div", "thumb"); tint(t, i.name || i.title); t.append(pic(i.image, i.name || i.title));
   if (label) t.append(el("span", "lbl", label));
   t.dataset.view = "1"; t.dataset.name = i.name || i.title; t.tabIndex = 0;
   return t;
 }
+
 function avatarEl(sm) {
   const a = el("span", "avatar" + (sm ? " sm" : ""));
   a.dataset.view = "1"; a.dataset.name = CONFIG.name; a.tabIndex = 0;
@@ -590,23 +599,39 @@ function avatarEl(sm) {
 }
 
 const viewer = el("div", "viewer"); viewer.hidden = true;
-viewer.innerHTML = '<button class="vclose" type="button" aria-label="Đóng">' + svg("x", 22) + '</button><figure><img alt=""><figcaption class="vcap"></figcaption></figure>';
+viewer.innerHTML = '<button class="vclose" type="button" aria-label="Đóng">' + svg("x", 22) + '</button><figure><div id="v-container"></div><figcaption class="vcap"></figcaption></figure>';
 document.body.append(viewer);
-const vimg = viewer.querySelector("img"), vcap = viewer.querySelector(".vcap");
+const vcontainer = viewer.querySelector("#v-container"), vcap = viewer.querySelector(".vcap");
+
 function openViewer(src, name) {
-  vimg.onerror = () => { vimg.onerror = null; vimg.src = fb(name); };
-  vimg.src = src; vcap.textContent = name; vcap.hidden = !name; viewer.hidden = false;
+  vcontainer.innerHTML = "";
+  let media;
+  if (src && src.split('?')[0].toLowerCase().endsWith('.mp4')) {
+    media = document.createElement("video");
+    media.autoplay = true; media.loop = true; media.controls = true; media.playsInline = true;
+    media.src = src;
+  } else {
+    media = document.createElement("img");
+    media.alt = "";
+    media.onerror = () => { media.onerror = null; media.src = fb(name); };
+    media.src = src;
+  }
+  vcontainer.append(media);
+  
+  vcap.textContent = name; vcap.hidden = !name; viewer.hidden = false;
   if (!reduce) {
     viewer.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 220, easing: "ease-out" });
-    vimg.animate([{ opacity: 0, transform: "scale(.9)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: SPRING });
+    media.animate([{ opacity: 0, transform: "scale(.9)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: SPRING });
   }
 }
+
 function closeViewer() {
   if (viewer.hidden) return;
-  if (reduce) { viewer.hidden = true; vimg.removeAttribute("src"); return; }
+  if (reduce) { viewer.hidden = true; vcontainer.innerHTML = ""; return; }
   const a = viewer.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 170, easing: "ease-in", fill: "forwards" });
-  a.onfinish = () => { viewer.hidden = true; vimg.removeAttribute("src"); a.cancel(); };
+  a.onfinish = () => { viewer.hidden = true; vcontainer.innerHTML = ""; a.cancel(); };
 }
+
 viewer.addEventListener("click", e => { if (e.target === viewer || e.target.closest(".vclose")) closeViewer(); });
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") { closeViewer(); closeDetailModal(); closeWelcomeModal(); }
@@ -615,8 +640,8 @@ document.addEventListener("click", e => {
   const t = e.target.closest("[data-view]");
   if (!t || t.closest("#detail-modal") || t.closest("#welcome-modal")) return;
   e.preventDefault(); e.stopPropagation();
-  const img = t.querySelector("img");
-  if (img) openViewer(img.currentSrc || img.src, t.dataset.name || "");
+  const media = t.querySelector("img") || t.querySelector("video");
+  if (media) openViewer(media.currentSrc || media.src, t.dataset.name || "");
 });
 
 /* HIỂN THỊ POPUP ĐỘNG THEO CONFIG */
@@ -648,7 +673,16 @@ setTimeout(() => {
 const dModal = $("detail-modal");
 function openDetailModal(i) {
   $("m-title").textContent = i.title || "Không tên"; $("m-sub").textContent = i.subtitle || ""; $("m-desc").textContent = i.description || "Không có mô tả.";
-  const imgEl = $("m-img"); imgEl.onerror = () => { imgEl.onerror = null; imgEl.src = fb(i.title); }; imgEl.src = i.image || fb(i.title);
+  
+  const mMedia = $("m-media"); mMedia.innerHTML = "";
+  const src = i.image || fb(i.title);
+  if (src && src.split('?')[0].toLowerCase().endsWith('.mp4')) {
+    mMedia.innerHTML = `<video src="${src}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;"></video>`;
+  } else {
+    const img = document.createElement("img"); img.style.cssText = "width:100%;height:100%;object-fit:cover;";
+    img.onerror = () => { img.onerror=null; img.src=fb(i.title); }; img.src = src; mMedia.appendChild(img);
+  }
+
   const acts = $("m-acts"); acts.replaceChildren();
   if (i.actions && i.actions.length > 0) {
     i.actions.forEach(act => {
