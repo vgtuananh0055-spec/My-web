@@ -219,10 +219,6 @@ kbd{font:500 11px var(--font-family);padding:2px 7px;border-radius:7px;border:1p
 
 /* ===== TAB THÔNG TIN ===== */
 .bento{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.stat{position:relative;grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:var(--radius);overflow:hidden}
-.stat .ico{display:grid;place-items:center;width:56px;height:56px;border-radius:var(--r2);color:var(--on-pri);background:linear-gradient(135deg,var(--pri),color-mix(in srgb,var(--pri) 50%,#ff5d8f))}
-.stat small{display:block;color:var(--muted);font-size:13px}
-.stat b{display:block;font-size:34px;line-height:1.1;color:var(--gold);font-variant-numeric:tabular-nums}
 .tile{position:relative;display:flex;align-items:center;gap:14px;padding:16px;overflow:hidden;border-radius:var(--radius);background:var(--surface);-webkit-backdrop-filter:blur(var(--blur)) saturate(160%);backdrop-filter:blur(var(--blur)) saturate(160%);border:1px solid var(--edge);box-shadow:var(--shadow);transform: perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0); transition:transform .2s ease-out, border-color .3s}
 .tile:hover{border-color:color-mix(in srgb,var(--pri) 60%,transparent);transform:translateY(-2px) perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(0)}
 .tile:active{transform:scale(.97)}
@@ -943,7 +939,7 @@ function updateSavedChip() {
 
 /* ============ TRẠNG THÁI & ROUTE ============ */
 const S = { tab: TABS[0], folder: null, q: "", sort: ls.get("kt_sort", "def"), layout: ls.get("kt_layout", "grid") };
-let lastKey = null, first = true, visits = null;
+let lastKey = null, first = true;
 
 function route() {
   const p = location.hash.slice(1).split("/");
@@ -1137,27 +1133,12 @@ function linkTile(l) {
 }
 function renderInfo(L, tab) {
   const links = tab.links || [], normal = links.filter(l => !isMedia(l)), media = links.filter(isMedia);
-  const st = el("div", "stat glass"); const ic = el("span", "ico"); ic.innerHTML = svg("eye", 28);
-  const tx = el("div"); tx.append(el("small", "", "Lượt truy cập trang")); const nb = el("b", "", visits != null ? visits.toLocaleString() : "…"); nb.id = "visits"; tx.append(nb);
-  st.append(ic, tx);
   L.append(secEl("01", "Liên hệ", normal.length));
-  const g = el("div", "bento"); g.append(st);
+  const g = el("div", "bento");
   if (!normal.length) g.append(emptyEl("Chưa có liên kết nào.", "link"));
   normal.forEach((l, i) => { const t = linkTile(l); t.style.setProperty("--d", Math.min(i, 8) * 45 + "ms"); g.append(t); });
   L.append(g);
   if (media.length) { L.append(secEl("02", "Âm nhạc & Video", media.length)); const g2 = el("div", "bento"); media.forEach(m => g2.append(embedEl(m))); L.append(g2); }
-}
-function countUp(n, to) {
-  if (reduce || !isFinite(to)) { n.textContent = Number(to).toLocaleString(); return; }
-  const t0 = performance.now(), D = 1000;
-  (function step(t) { const p = Math.min(1, (t - t0) / D), e = 1 - Math.pow(1 - p, 3); n.textContent = Math.round(to * e).toLocaleString(); if (p < 1) requestAnimationFrame(step); })(t0);
-}
-function loadVisits() {
-  let counted = false; try { counted = sessionStorage.getItem("kt_counted") === "1"; } catch (e) {}
-  fetch("https://api.counterapi.dev/v1/kaitouu_page_1307/visits" + (counted ? "" : "/up")).then(r => r.json()).then(d => {
-    visits = d.count; try { sessionStorage.setItem("kt_counted", "1"); } catch (e) {}
-    const n = $("visits"); if (n) countUp(n, visits);
-  }).catch(() => { const n = $("visits"); if (n && n.textContent === "…") n.textContent = "—"; });
 }
 
 /* ============ HIỆU ỨNG ============ */
@@ -1260,7 +1241,6 @@ buildNav();
 setTheme(ls.get("kt_theme", "dark") === "light" ? "light" : "dark");
 addEventListener("hashchange", route);
 addEventListener("resize", () => glide(true));
-loadVisits();
 route();
 requestAnimationFrame(() => glide(true));
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => glide(true));
