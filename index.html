@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+
+
+
+
 :root{
   --bg:#08070d; --text:#f4f1fb; --muted:#a9a2bd;
   --surface:rgba(22,18,36,.75); --surface2:rgba(255,255,255,.07); --edge:rgba(255,255,255,.13);
@@ -105,29 +109,6 @@ h1,h2,h3{font-family:var(--font-family);font-weight:700}
   .nv:hover svg { animation: wiggle 0.4s ease-in-out; color: var(--pri); }
 }
 kbd{font:500 11px var(--font-family);padding:2px 7px;border-radius:7px;border:1px solid var(--edge);background:var(--surface2);color:var(--muted)}
-
-/* ===== HERO ===== */
-.hero{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:flex-end;min-height:230px;padding:22px;border-radius:var(--radius);border:1px solid var(--edge);box-shadow:var(--shadow);transform:translateZ(0)}
-.hbg{position:absolute;inset:-5%;z-index:-3;will-change:transform}
-.hbg i{position:absolute;inset:0;background-size:cover;background-position:center;animation:kb 26s ease-in-out infinite alternate;will-change:transform}
-@keyframes kb{to{transform:scale(1.08) translate(-1%,-.8%)}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,7,13,.05) 15%,rgba(8,7,13,.86))}
-.orb{position:absolute;z-index:-2;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:var(--pri);filter:blur(60px);opacity:.45}
-.hrow{display:flex;align-items:flex-end;gap:16px;width:100%;min-width:0}
-
-/* Hiệu ứng Floating (Bay lơ lửng) cho Icon / Avatar ở Hero */
-@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.htile{display:grid;place-items:center;width:84px;height:84px;flex:none;border-radius:var(--r2);overflow:hidden;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px); animation: float 4s ease-in-out infinite;}
-.htile img{width:100%;height:100%;object-fit:cover}
-.hero .avatar.lg { animation: float 4s ease-in-out infinite; }
-
-.htxt{min-width:0;color:#fff}
-.kick{display:inline-flex;align-items:center;gap:6px;padding:3px 11px 3px 8px;margin-bottom:8px;border-radius:99px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.hero h1{font-size:clamp(28px,6.5vw,46px);line-height:1.12;letter-spacing:-.01em;background:linear-gradient(135deg,var(--text-g1),var(--text-g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
-.hero p{margin-top:4px;font-size:14px;color:rgba(255,255,255,.86);max-width:56ch}
-.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:13px;font-weight:500;color:rgba(255,255,255,.92)}
-.pill{font-size:12px;padding:2px 11px;border-radius:99px;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-@media(min-width:960px){.hero{min-height:290px;padding:32px}.htile{width:104px;height:104px}}
 
 /* ===== THANH CÔNG CỤ ===== */
 .tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 12px}
@@ -306,6 +287,10 @@ kbd{font:500 11px var(--font-family);padding:2px 7px;border-radius:7px;border:1p
   *,*::before,*::after{animation:none!important;transition:none!important}
   .rv{opacity:1}
 }
+
+
+
+
 </style>
 </head>
 <body>
