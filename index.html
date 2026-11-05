@@ -966,18 +966,70 @@ function updateSavedChip() {
 const S = { tab: TABS[0], folder: null, q: "", sort: ls.get("kt_sort", "def"), layout: ls.get("kt_layout", "grid") };
 let lastKey = null, first = true;
 
+let tabTransitionToken = 0;
+let tabTransitionAnim = null;
+
 function route() {
   const p = location.hash.slice(1).split("/");
   const nt = TABS.includes(p[0]) ? p[0] : TABS[0]; const tab = CONFIG.tabs[nt];
   let nf = null;
   if (tab.folders && tab.folders.length) nf = p[1] === "saved" ? "saved" : (tab.folders.some(f => f.id === p[1]) ? p[1] : tab.folders[0].id);
   const key = nt + "/" + nf; if (key === lastKey) return; lastKey = key;
-  const old = S.tab, tabChanged = nt !== old || first;
-  S.tab = nt; S.folder = nf; S.q = "";
+
+  const old = S.tab, isFirst = first, tabChanged = nt !== old || isFirst;
   closeDetail();
-  if (tabChanged) { view(first ? 0 : (TABS.indexOf(nt) > TABS.indexOf(old) ? 1 : -1)); if (!first) window.scrollTo(0, 0); }
-  else { syncFolders(); const i = document.querySelector(".sbox input"); if (i) { i.value = ""; const c = document.querySelector(".sbox .clr"); if (c) c.hidden = true; } refreshList(); }
-  first = false;
+
+  if (!tabChanged) {
+    S.folder = nf; S.q = "";
+    syncFolders();
+    const i = document.querySelector(".sbox input");
+    if (i) { i.value = ""; const c = document.querySelector(".sbox .clr"); if (c) c.hidden = true; }
+    refreshList();
+    first = false;
+    return;
+  }
+
+  const direction = isFirst || old == null ? 0 : (TABS.indexOf(nt) > TABS.indexOf(old) ? 1 : -1);
+  const token = ++tabTransitionToken;
+  if (tabTransitionAnim) { tabTransitionAnim.cancel(); tabTransitionAnim = null; }
+
+  const commit = () => {
+    if (token !== tabTransitionToken) return;
+    S.tab = nt; S.folder = nf; S.q = "";
+    view(direction);
+    if (!isFirst) window.scrollTo(0, 0);
+    first = false;
+
+    if (!reduce && direction !== 0) {
+      const active = document.querySelector('[data-k="' + nt + '"][aria-current="page"]');
+      if (active) {
+        anim(active, [{ transform: "scale(.84)" }, { transform: "scale(1)" }],
+          { duration: 420, easing: SPRING });
+        const icon = active.querySelector("svg");
+        if (icon) anim(icon, [{ transform: "translateY(6px)" }, { transform: "translateY(0)" }],
+          { duration: 460, easing: SPRING });
+      }
+    }
+  };
+
+  if (isFirst || reduce || direction === 0) { commit(); return; }
+
+  const currentView = $("view");
+  if (!currentView) { commit(); return; }
+  tabTransitionAnim = anim(currentView,
+    [
+      { opacity: 1, transform: "translateX(0)" },
+      { opacity: 0, transform: "translateX(" + (-direction * 24) + "px)" }
+    ],
+    { duration: 145, easing: "ease-in", fill: "forwards" }
+  );
+  if (!tabTransitionAnim) { commit(); return; }
+  tabTransitionAnim.onfinish = () => {
+    if (token !== tabTransitionToken) return;
+    tabTransitionAnim.cancel();
+    tabTransitionAnim = null;
+    commit();
+  };
 }
 function goto(t, f) {
   const tab = CONFIG.tabs[t]; const h = "#" + t + (tab.folders && f ? "/" + f : "");
@@ -1090,7 +1142,14 @@ function view(dir) {
   const list = el("div"); list.id = "list"; root.append(list);
   const ft = el("p", "foot", "© " + new Date().getFullYear() + " " + CONFIG.name + " · Web V2"); root.append(ft);
   syncNav(); syncFolders(); refreshList();
-  anim(root, [{ opacity: 0, transform: "translateX(" + dir * 26 + "px)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: "cubic-bezier(.2,.8,.2,1)" });
+  if (!reduce) {
+    anim(root, [{ opacity: 0, transform: "translateX(" + dir * 26 + "px)" }, { opacity: 1, transform: "none" }],
+      { duration: 390, easing: "cubic-bezier(.2,.8,.2,1)" });
+    const reveal = root.querySelectorAll(".hero,.tools,.fol,.sec,.card,.tile,.embed,.empty");
+    reveal.forEach((node, i) => anim(node,
+      [{ opacity: 0, transform: "translate(" + (dir * 18) + "px,12px) scale(.985)" }, { opacity: 1, transform: "none" }],
+      { duration: 420, delay: Math.min(i, 8) * 38, easing: "cubic-bezier(.2,.8,.2,1)", fill: "backwards" }));
+  }
 }
 
 function secEl(no, title, cnt) {
