@@ -117,17 +117,21 @@ kbd{font:500 11px var(--font-family);padding:2px 7px;border-radius:7px;border:1p
 
 /* Hiệu ứng Floating (Bay lơ lửng) cho Icon / Avatar ở Hero */
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-.htile{display:grid;place-items:center;width:84px;height:84px;flex:none;border-radius:var(--r2);overflow:hidden;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px); animation: float 4s ease-in-out infinite;}
-.htile img{width:100%;height:100%;object-fit:cover}
-.hero .avatar.lg { animation: float 4s ease-in-out infinite; }
 
-.htxt{min-width:0;color:#fff}
-.kick{display:inline-flex;align-items:center;gap:6px;padding:3px 11px 3px 8px;margin-bottom:8px;border-radius:99px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-.hero h1{font-size:clamp(28px,6.5vw,46px);line-height:1.12;letter-spacing:-.01em;background:linear-gradient(135deg,var(--text-g1),var(--text-g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
+/* Thu nhỏ ảnh vuông và avatar */
+.htile{display:grid;place-items:center;width:64px;height:64px;flex:none;border-radius:18px;overflow:hidden;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px); animation: float 4s ease-in-out infinite;}
+.htile img{width:100%;height:100%;object-fit:cover}
+.hero .avatar.lg { --s: 64px; padding: 2px; animation: float 4s ease-in-out infinite; }
+
+.htxt{min-width:0;color:#fff; display:flex; flex-direction:column; justify-content:center;}
+
+/* Di chuyển nhãn Kick (THÔNG TIN / MC JAVA) lên góc trái */
+.kick{position:absolute; top:22px; left:22px; z-index:5; display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:99px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#fff;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+
+.hero h1{font-size:clamp(26px,6vw,40px);line-height:1.15;letter-spacing:-.01em;background:linear-gradient(135deg,var(--text-g1),var(--text-g2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 6px rgba(0,0,0,.55))}
 .hero p{margin-top:4px;font-size:14px;color:rgba(255,255,255,.86);max-width:56ch}
-.meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px;font-size:13px;font-weight:500;color:rgba(255,255,255,.92)}
-.pill{font-size:12px;padding:2px 11px;border-radius:99px;background:rgba(255,255,255,.18);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-@media(min-width:960px){.hero{min-height:290px;padding:32px}.htile{width:104px;height:104px}}
+
+@media(min-width:960px){.hero{min-height:290px;padding:32px}.htile{width:80px;height:80px}.hero .avatar.lg{--s:80px}.kick{top:32px;left:32px}}
 
 /* ===== THANH CÔNG CỤ ===== */
 .tools{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 12px}
@@ -1019,18 +1023,20 @@ function heroEl(tab) {
   bg.style.background = "linear-gradient(135deg," + g[0] + "," + g[1] + ")";
   if (tab.bannerImg) bi.style.backgroundImage = 'url("' + String(tab.bannerImg).replace(/"/g, "%22") + '")';
   bg.append(bi);
+
+  // Nhãn tên tab được đưa lên góc trên bên trái
+  const k = el("span", "kick"); k.innerHTML = svg(S.tab, 14); k.append(document.createTextNode(tab.label));
+
   const row = el("div", "hrow"); let lead;
   if (tab.iconImg) { lead = el("span", "htile"); const im = el("img"); im.alt = ""; im.referrerPolicy = "no-referrer"; im.src = tab.iconImg; im.onerror = () => { im.remove(); lead.innerHTML = svg(S.tab, 34); }; lead.append(im); }
   else if (tab.links) lead = avatarEl("lg");
   else { lead = el("span", "htile"); lead.innerHTML = svg(S.tab, 38); }
+
   const m = el("div", "htxt");
-  const k = el("span", "kick"); k.innerHTML = svg(S.tab, 14); k.append(document.createTextNode(tab.label));
-  m.append(k, el("h1", "", tab.title), el("p", "", tab.sub));
-  const meta = el("div", "meta");
-  if (!tab.links) meta.append(avatarEl("sm"));
-  meta.append(el("span", "", "By " + CONFIG.name), el("span", "pill", countOf(S.tab) + " mục"));
-  if (tab.folders) meta.append(el("span", "pill", tab.folders.length + " danh mục"));
-  m.append(meta); row.append(lead, m); h.append(bg, el("span", "orb"), row);
+  m.append(el("h1", "", tab.title), el("p", "", tab.sub));
+
+  row.append(lead, m); 
+  h.append(bg, el("span", "orb"), k, row);
   return h;
 }
 function toolsEl() {
