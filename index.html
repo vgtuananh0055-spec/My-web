@@ -315,6 +315,39 @@ kbd{font:500 11px var(--font-family);padding:2px 7px;border-radius:7px;border:1p
 .kick{translate:-18px -17px!important;scale:0.74!important}
 .fchip{border-radius:79px!important}
 /* ===== ADMIN-GUI END ===== */
+
+/* ============ BẢN CẬP NHẬT ANIMATION SIÊU MƯỢT ============ */
+html { scroll-behavior: smooth; }
+@keyframes smoothFadeUp {
+  from { opacity: 0; transform: translateY(40px) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.card, .tile {
+  animation: smoothFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.card:hover, .tile:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5) !important;
+  z-index: 2;
+}
+@keyframes sheetin {
+  from { transform: translateY(80px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.dlg.on .sheet, .pal.on .pbox {
+  animation: sheetin 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+#view {
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#view.fade-out {
+  opacity: 0;
+  transform: translateY(15px) scale(0.97);
+}
+.avatar img, .media img, .media video {
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
 </style>
 </head>
 <body>
@@ -662,7 +695,7 @@ const CONFIG = {
             {
               title: "Chunk Expansion: Halloween Edition",
               subtitle: "by Wildphire",
-              description: "Search  Close search  Suggested searches   Popular Discoveries  ![Image 62: Steve and Alex on a grassy hill in the daytime with other mobs and characters in the backgroundMinecraft](https://www.minecraft.net/en-us/about-minecraft)  ![Image 63: Minecraft characters look at various new content available on the marketplaceSkins & DLC](https://www.minecraft.net/en-us/marketplace)  ![Image 64: Steve, Alex, and various other characters standing in dark room.Change Java Skins & Capes](https://www.minecraft.net/en-us/msaprofile/mygames/editskin)  ![Image 65: Steve, Alex, and various other characters and animals burst out of a nether portal below text reading: Minecraft RealmsMinecraft Realms](https://www.minecraft.net/en-us/realms)\n\nMinecraft Java & Bedrock Minecraft Dungeons II Minecraft Dungeons Minecraft Legends Minecraft Education",
+              description: "Nhiều nội dung Halloween thú vị...",
               image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/8203bee5-275f-49eb-8df2-961068318922/HCE_Thumbnail_0.jpg",
               source: "https://www.minecraft.net/en-us/marketplace/pdp/wildphire/chunk-expansion:-halloween-edition/aad01d55-f663-4ef7-8be9-6067c39d4ecc",
               actions: [
@@ -674,52 +707,7 @@ const CONFIG = {
               ],
               banner: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/92ef5083-8dca-4662-b6a2-e57392aab836/HCE_screenshot_1.jpg",
               previewImages: [
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/92ef5083-8dca-4662-b6a2-e57392aab836/HCE_screenshot_1.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/22be88d1-4dd2-48bc-b93e-05bad4cbd769/HCE_screenshot_2.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/8f8f7c1f-ced3-451f-b5db-374f675c8b4f/HCE_screenshot_3.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/8203bee5-275f-49eb-8df2-961068318922/HCE_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/41011b16-efe9-4de7-8177-1c78f248e4b2/HCE_panorama_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/072fec5a-be61-4ca1-a02d-3ce97c9aea98/JungleExplorers1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/f7c71b85-aec0-4932-9188-1561b66c0fc6/EF_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/12989423-aa59-4be1-92e8-baa44956c246/RGBCapybaras1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/bed45669-ee18-4ed4-8a48-da7bb8203910/EH_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/5696ece1-b59f-4459-a5e3-05b35a8ca7fb/REAPERS1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/78721725-4ec6-479e-b6b5-ea5f644745e4/PPPPumpkins1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/e48f5afe-589e-4ad7-9607-992e7d642ff3/ScaryClowns1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/cfc686f3-7ac5-4ed3-8dbe-bd792b6350a5/TOT_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/2641b170-e9a4-4915-b02e-42b8d99289a6/HalloweenBackrooms1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/f3bdf318-6470-4f20-bf14-bda5c215f199/SpookyCostumes1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/5503d132-29ff-4369-9c2f-62aec5c622f8/Witches_and_Wizards1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/f9b8f1d6-8cfd-4533-a56a-46acb9b66e6c/MonkeyMonsters1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/6c0a2a8e-70b2-406d-9c7f-a1f2bbaeda0c/HalloweenMasks1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d58827ba-5f7b-415d-8645-98e15c1297f8/Spookybaras1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/b3bfd55f-de73-403c-b7a2-748327db6751/AbyssalVoids1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/2c9c532a-ad5b-4c1e-8c7f-663098df8b02/SpaceExplorers1.0.0_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/f7e9dadb-b8f2-4252-bbee-42b72bfcbd9b/Animals1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/79813dd2-f418-4f16-a15d-cf39f1742657/MobClothes1.0.0_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/7cb195d4-259a-438b-b4e6-d316301b1bbd/ce_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/0e4de672-17cc-4651-a199-5c592016172c/MS_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/b701a2c2-5787-4ddc-aed7-8610092578d2/SCPEscapeRoom2_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/a6f545c3-5d63-41f0-a7d5-3268c4900d4d/Into_The_Depth_thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/cc74a039-f2fd-4137-820c-6000455d5c93/GolfPlus_thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/403b3307-3c77-4fad-b485-c41b95fc89f6/Spooky_Autumn_Castle_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/0ce43ab7-c491-4c6b-bfed-0d9e2d9cf37f/SecurityMansion_thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d9e914f8-cb11-42a5-9434-50d5b722f6fd/ThePier_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/6dfc6a52-5e2a-4930-916e-104054edbcb3/UFOStation_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/b1006d83-342e-44ed-ba3c-539df5e5d598/WorldsRichestMansion_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/c0b86cbe-84e6-430c-8e85-fd34d45934b1/CC_PGV24_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/828fefe7-4413-4fb9-a012-86d78c6f4a76/BattleMiniGames_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/74ef43e5-fccd-4581-9e00-731f944db65a/AbyssalAdventure_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/bdf473f6-79f6-4cf8-abf0-87642cf849ae/Fusion_Power_Tour_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/99d17cdf-a3c0-494b-a46b-16b6c76127e6/DPF_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/e5688f94-fd55-4ead-8f04-438379fc0395/SM_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/8b375119-280f-4764-91d5-a8b730cd151f/HorrorHotel_thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/03b4d5d0-bc62-49e0-b463-cbc48c4dea72/HideAndSeekShapeShifter_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/90c63e56-05fa-4a44-a9d7-612eb17892cf/D5Sf9xpZE4o_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/016b6bc2-8c2d-4230-881d-69389ede876b/_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/577bba00-8af7-4c31-a29a-362b527fd0af/MEGARESORT_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/3be97fee-6f88-4ef6-8120-34208b835176/Mob_Trades_Thumbnail_0.jpg",
-                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/be69b571-3e3e-4789-8efa-7ba7334070f3/M_Thumbnail_0.jpg"
+                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/92ef5083-8dca-4662-b6a2-e57392aab836/HCE_screenshot_1.jpg"
               ],
               metaExtra: "Wildphire",
               marketplaceUrl: "https://www.minecraft.net/en-us/marketplace/pdp/wildphire/chunk-expansion:-halloween-edition/aad01d55-f663-4ef7-8be9-6067c39d4ecc"
@@ -733,7 +721,7 @@ const CONFIG = {
             {
               title: "Actions & Stuff 1.13",
               subtitle: "by Oreville Studios",
-              description: "Search  Close search  Suggested searches   Popular Discoveries  ![Image 63: Steve and Alex on a grassy hill in the daytime with other mobs and characters in the backgroundMinecraft](https://www.minecraft.net/en-us/about-minecraft)  ![Image 64: Minecraft characters look at various new content available on the marketplaceSkins & DLC](https://www.minecraft.net/en-us/marketplace)  ![Image 65: Steve, Alex, and various other characters standing in dark room.Change Java Skins & Capes](https://www.minecraft.net/en-us/msaprofile/mygames/editskin)  ![Image 66: Steve, Alex, and various other characters and animals burst out of a nether portal below text reading: Minecraft RealmsMinecraft Realms](https://www.minecraft.net/en-us/realms)\n\nMinecraft Java & Bedrock Minecraft Dungeons II Minecraft Dungeons Minecraft Legends Minecraft Education",
+              description: "Minecraft Java & Bedrock...",
               image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/85b9d40c-405e-4d79-8912-b2d5af3bdd74/actionsandstuff_Thumbnail_0.jpg",
               source: "https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/actions--stuff-1.13/61c7a786-d7ad-49e0-a710-817121cd9795",
               actions: [
@@ -753,7 +741,7 @@ const CONFIG = {
             {
               title: "Scary Visuals",
               subtitle: "by Chunklabs",
-              description: "Nội dung này yêu cầu thiết bị hỗ trợ Vibrant Visuals. Kiểm tra xem thiết bị của bạn có hỗ trợ Vibrant Visuals hay không.\n\nBạn nghĩ thế giới của mình chưa đủ rùng rợn? Hãy thêm Scary Visuals! Trải nghiệm những đêm tối tăm hơn,",
+              description: "Thêm Scary Visuals! Trải nghiệm những đêm tối tăm hơn.",
               image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/6bc8f537-e007-42da-89c9-4aeaaaff1ee1/Scary_Visuals_Thumbnail_0.jpg",
               source: "https://www.minecraft.net/en-us/marketplace/pdp/chunklabs/scary-visuals/a1fbcaf9-5e43-4a48-9447-5ad08c8b0f3c",
               actions: [
@@ -768,7 +756,7 @@ const CONFIG = {
             {
               title: "Actions & Stuff: Flat Textures",
               subtitle: "by Oreville Studios",
-              description: "Search  Close search  Suggested searches   Popular Discoveries  ![Image 62: Steve and Alex on a grassy hill in the daytime with other mobs and characters in the backgroundMinecraft](https://www.minecraft.net/en-us/about-minecraft)  ![Image 63: Minecraft characters look at various new content available on the marketplaceSkins & DLC](https://www.minecraft.net/en-us/marketplace)  ![Image 64: Steve, Alex, and various other characters standing in dark room.Change Java Skins & Capes](https://www.minecraft.net/en-us/msaprofile/mygames/editskin)  ![Image 65: Steve, Alex, and various other characters and animals burst out of a nether portal below text reading: Minecraft RealmsMinecraft Realms](https://www.minecraft.net/en-us/realms)\n\nMinecraft Java & Bedrock Minecraft Dungeons II Minecraft Dungeons Minecraft Legends Minecraft Education",
+              description: "Flat Textures by Oreville",
               image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg",
               source: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d",
               actions: [
@@ -780,11 +768,7 @@ const CONFIG = {
               ],
               banner: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpgenshot_2.jpg",
               previewImages: [
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/4aac12be-e63f-4b7a-be49-829026dc9408/actionsandstuffflattextures_screenshot_2.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/c44a0db4-e062-4c3c-a80d-b89d4b010640/actionsandstuffflattextures_screenshot_3.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/a3bbc75c-3beb-45eb-852d-657c9b08769d/actionsandstuffflattextures_screenshot_4.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg",
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/122612f2-e402-4f84-8a1b-7c184ae4e6b9/actionsandstuffflattextures_panorama_0.jpg"
+                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg"
               ],
               metaExtra: "Oreville Studios",
               marketplaceUrl: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d"
@@ -853,7 +837,7 @@ const CONFIG = {
 /* ============ TIỆN ÍCH ============ */
 const $ = id => document.getElementById(id);
 const el = (t, c, txt) => { const n = document.createElement(t); if (c) n.className = c; if (txt !== undefined) n.textContent = txt; return n; };
-const fold = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
+const fold = s => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d");
 const ls = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -1151,7 +1135,6 @@ function fillDetail() {
     openLB(gal, gIdx, e.title);
   };
 
-  // Nút điều hướng trên khung ảnh chính: nếu có nhiều ảnh preview thì chuyển ảnh preview, nếu chỉ có 1 ảnh thì chuyển sang mục tiếp theo
   if (gal.length > 1) {
     const l = el("button", "nav l"), r = el("button", "nav r"); l.type = r.type = "button";
     l.innerHTML = svg("left", 20); r.innerHTML = svg("right", 20);
@@ -1168,7 +1151,6 @@ function fillDetail() {
     m.append(l, r);
   }
 
-  // Thanh cuộn ảnh Preview thu nhỏ (Gallery Strip)
   let galStrip = null;
   if (gal.length > 1) {
     galStrip = el("div", "sgal");
@@ -1225,7 +1207,6 @@ function copyText(t, msg) {
 }
 function fallbackCopy(t, done) { const a = document.createElement("textarea"); a.value = t; a.style.cssText = "position:fixed;opacity:0"; document.body.append(a); a.select(); try { document.execCommand("copy"); } catch (e) {} a.remove(); done(); }
 $("dlg").addEventListener("click", e => { if (e.target === $("dlg")) closeDetail(); });
-/* vuốt xuống để đóng (mobile) */
 (function swipe() {
   let y0 = null, dy = 0;
   sheet.addEventListener("touchstart", e => { if (innerWidth < 700 && sheet.scrollTop <= 0 && !e.target.closest(".nav,.sgal")) { y0 = e.touches[0].clientY; dy = 0; } }, { passive: true });
@@ -1276,8 +1257,18 @@ function route() {
   }
 
   S.tab = nt; S.folder = nf; S.q = "";
-  view();
-  if (!isFirst) window.scrollTo(0, 0);
+  
+  const viewEl = $("view");
+  if (!isFirst) {
+    viewEl.classList.add("fade-out"); // Bắt đầu hiệu ứng mờ đi
+    setTimeout(() => {
+      view(); // Đổi nội dung HTML
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      requestAnimationFrame(() => viewEl.classList.remove("fade-out")); // Hiện mượt lên lại
+    }, 200); // Đợi 200ms cho mờ hẳn rồi mới đổi
+  } else {
+    view();
+  }
   first = false;
 }
 function goto(t, f) {
@@ -1291,7 +1282,6 @@ function brandEl() {
   const t = el("div"); const n = el("b", "", CONFIG.name || ""); const s = el("small", "", "Minecraft hub"); t.append(n, s); b.append(t); return b;
 }
 function buildNav() {
-  /* sidebar (desktop) */
   const side = $("side"), panel = el("div", "panel glass");
   panel.append(brandEl(), el("div", "lab", "Danh mục"));
   TABS.forEach(k => {
@@ -1303,13 +1293,11 @@ function buildNav() {
   const row = el("div", "row2"); const th = el("button", "sbtn js-theme"); th.type = "button"; th.onclick = toggleTheme;
   row.append(th); panel.append(sb, row); side.append(panel);
   th.style.justifyContent = "center";
-  /* mobile top */
   const top = $("mtop"); top.append(brandEl());
   const tools = el("div", "tools-top");
   const s2 = el("button", "ib"); s2.type = "button"; s2.innerHTML = svg("search", 20); s2.setAttribute("aria-label", "Tìm kiếm"); s2.onclick = openPal;
   const t2 = el("button", "ib js-theme"); t2.type = "button"; t2.onclick = toggleTheme;
   tools.append(s2, t2); top.append(tools);
-  /* seg */
   const seg = $("seg"); const g = el("span", "glider"); g.id = "glider"; seg.append(g);
   TABS.forEach(k => { const a = el("a"); a.href = "#" + k; a.dataset.k = k; a.innerHTML = svg(k, 18); a.append(el("span", "", CONFIG.tabs[k].label)); seg.append(a); });
 }
@@ -1434,10 +1422,11 @@ function cardEl(e, idx) {
   if (main) { const a = el("a", "btn pri grow"); ext(a, main.url); a.innerHTML = svg("dl", 17); a.append(el("span", "t", main.label)); a.title = main.label; a.setAttribute("aria-label", main.label + " " + e.title); a.onclick = () => toast("Đang mở: " + e.title, "dl"); f.append(a); }
   const d = el("button", "btn" + (main ? " icon" : " grow")); d.type = "button"; d.innerHTML = svg(main ? "info" : "layers", 18); d.setAttribute("aria-label", "Chi tiết " + e.title); d.title = "Chi tiết";
   if (!main) d.append(el("span", "t", "Xem chi tiết")); d.onclick = () => openDetail(idx); f.append(d);
-  c.append(m, b, f); return c;
+  c.append(m, b, f); 
+  c.style.animationDelay = (idx * 0.05) + "s";
+  return c;
 }
 
-/* ============ tab thông tin ============ */
 const isMedia = l => l.app === "spotify" || l.app === "youtubemusic";
 function ytEmbed(u) {
   try { const x = new URL(u); let id = x.searchParams.get("v"); const list = x.searchParams.get("list");
@@ -1461,6 +1450,7 @@ function linkTile(l) {
   const a = el("a", "stretch"); ext(a, l.url); a.setAttribute("aria-label", l.name); t.append(a);
   const cp = el("button", "go"); cp.type = "button"; cp.innerHTML = svg("copy", 17); cp.setAttribute("aria-label", "Chép link " + l.name); cp.title = "Chép link";
   cp.onclick = e => { e.stopPropagation(); copyText(l.url, "Đã chép link " + l.name); }; t.append(cp);
+  t.style.animationDelay = (Math.random() * 0.15) + "s";
   return t;
 }
 function renderInfo(L, tab) {
