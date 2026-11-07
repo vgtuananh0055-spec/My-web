@@ -66,25 +66,37 @@ const CONFIG = {
               github: "https://github.com/vgtuananh0055-spec/KaiLauncher"
             },
             {
-              title: "RayLauncher",
-              subtitle: "by KedaMC",
-              description: "A Minecraft: Java Edition Launcher for Android",
-              image: "https://avatars.githubusercontent.com/u/201689396?v=4",
-              source: "https://github.com/KedaMC/RayLauncher",
+              title: "starling",
+              subtitle: "by starling-client",
+              description: "Starling, formerly Horizon Android: Android port of Horizon (Rust Minecraft 26.3) with Vulkan, editable touch controls and native .hmod mods.",
+              image: "https://raw.githubusercontent.com/starling-client/starling/refs/heads/android/packaging/icons/hicolor/128x128/apps/horizon.png",
+              source: "https://github.com/starling-client/starling",
               actions: [
                 {
-                  label: "Tải xuống (v1.0-alpha6)",
-                  url: "https://github.com/KedaMC/RayLauncher/releases/download/v1.0-alpha6/RayLauncher-2.8.1-Alpha6-arm64-v8a.apk",
+                  label: "Tải xuống (v0.7.8)",
+                  url: "https://github.com/starling-client/starling/releases/download/v0.7.8/Horizon-Android-0.7.8-arm64-v8a.apk",
                   primary: true
                 }
               ],
-              banner: "https://opengraph.githubassets.com/1/KedaMC/RayLauncher",
+              banner: "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
               previewImages: [
-                "https://opengraph.githubassets.com/1/KedaMC/RayLauncher"
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/dpad-river.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/snow-landscape.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/third-person-desert.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/desert-panorama.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-menu.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-gameplay.png",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/banner.webp",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-play.webp",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-settings.webp",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/sunset.webp",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/survival.webp",
+                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/settings.webp"
               ],
-              metaExtra: "KedaMC · ⭐ 3 · v1.0-alpha6 · Kotlin",
-              marketplaceUrl: "https://github.com/KedaMC/RayLauncher",
-              github: "https://github.com/KedaMC/RayLauncher"
+              metaExtra: "starling-client · ⭐ 661 · v0.7.8 · Rust",
+              marketplaceUrl: "https://github.com/starling-client/starling/tree/android",
+              github: "https://github.com/starling-client/starling"
             },
             {
               title: "AmberLauncher",
@@ -106,6 +118,27 @@ const CONFIG = {
               metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.62 · Kotlin",
               marketplaceUrl: "https://github.com/ItsVynzzzz/AmberLauncher",
               github: "https://github.com/ItsVynzzzz/AmberLauncher"
+            },
+            {
+              title: "RayLauncher",
+              subtitle: "by KedaMC",
+              description: "A Minecraft: Java Edition Launcher for Android",
+              image: "https://avatars.githubusercontent.com/u/201689396?v=4",
+              source: "https://github.com/KedaMC/RayLauncher",
+              actions: [
+                {
+                  label: "Tải xuống (v1.0-alpha6)",
+                  url: "https://github.com/KedaMC/RayLauncher/releases/download/v1.0-alpha6/RayLauncher-2.8.1-Alpha6-arm64-v8a.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://opengraph.githubassets.com/1/KedaMC/RayLauncher",
+              previewImages: [
+                "https://opengraph.githubassets.com/1/KedaMC/RayLauncher"
+              ],
+              metaExtra: "KedaMC · ⭐ 3 · v1.0-alpha6 · Kotlin",
+              marketplaceUrl: "https://github.com/KedaMC/RayLauncher",
+              github: "https://github.com/KedaMC/RayLauncher"
             }
           ]
         },
