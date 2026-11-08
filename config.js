@@ -54,7 +54,7 @@ const CONFIG = {
               subtitle: "by KaiTouu",
               description: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
               image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png",
-              source: "https://github.com/vgtuananh0055-spec/KaiLauncher",
+              source: "*",
               actions: [
                 {
                   label: "Tải bản mới nhất",
@@ -62,8 +62,12 @@ const CONFIG = {
                   primary: true
                 }
               ],
-              marketplaceUrl: "https://github.com/vgtuananh0055-spec/KaiLauncher",
-              github: "https://github.com/vgtuananh0055-spec/KaiLauncher"
+              previewImages: [
+                "https://i.postimg.cc/zvddLTgQ/Screenshot-2026-11-08-08-09-18-062-com-russoviller-cryogenic.jpg",
+                "https://i.postimg.cc/J0hxWt2Q/Screenshot-2026-11-07-18-05-44-780-com-russoviller-cryogenic.jpg"
+              ],
+              metaExtra: "KaiTouu",
+              marketplaceUrl: "https://github.com/vgtuananh0055-spec/KaiLauncher"
             },
             {
               title: "Horizon - launcher",
