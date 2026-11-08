@@ -66,7 +66,7 @@ const CONFIG = {
               github: "https://github.com/vgtuananh0055-spec/KaiLauncher"
             },
             {
-              title: "starling",
+              title: "Horizon - launcher",
               subtitle: "by starling-client",
               description: "Starling, formerly Horizon Android: Android port of Horizon (Rust Minecraft 26.3) with Vulkan, editable touch controls and native .hmod mods.",
               image: "https://raw.githubusercontent.com/starling-client/starling/refs/heads/android/packaging/icons/hicolor/128x128/apps/horizon.png",
