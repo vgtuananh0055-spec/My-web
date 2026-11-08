@@ -102,12 +102,12 @@ const CONFIG = {
               title: "AmberLauncher",
               subtitle: "by ItsVynzzzz",
               description: "Launcher minecraft java untuk android dengan fitur yang lebih sedikit",
-              image: "https://avatars.githubusercontent.com/u/333234362?v=4",
+              image: "https://raw.githubusercontent.com/ItsVynzzzz/AmberLauncher/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
               source: "https://github.com/ItsVynzzzz/AmberLauncher",
               actions: [
                 {
                   label: "Tải xuống (v0.1.0-beta.62)",
-                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/v0.1.0-beta.62/AmberLauncher-0.1.0-beta.62-64bit-arm64-v8a-RECOMMENDED.apk",
+                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/uji/AmberLauncher-0.1.0-beta.66.uji.148-64bit-arm64-v8a.apkk",
                   primary: true
                 }
               ],
@@ -115,7 +115,7 @@ const CONFIG = {
               previewImages: [
                 "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher"
               ],
-              metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.62 · Kotlin",
+              metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.66 · Kotlin",
               marketplaceUrl: "https://github.com/ItsVynzzzz/AmberLauncher",
               github: "https://github.com/ItsVynzzzz/AmberLauncher"
             },
