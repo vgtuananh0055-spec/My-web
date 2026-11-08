@@ -139,6 +139,26 @@ const CONFIG = {
               metaExtra: "KedaMC · ⭐ 3 · v1.0-alpha6 · Kotlin",
               marketplaceUrl: "https://github.com/KedaMC/RayLauncher",
               github: "https://github.com/KedaMC/RayLauncher"
+            },
+            {
+              title: "NUX Launcher",
+              subtitle: "by NUX Team",
+              description: "High-performance Minecraft launcher for Windows & Android featuring parallel downloads, built-in low-latency Voice Rooms, multi-account profile management, and custom instance isolation.",
+              image: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
+              source: "https://www.nuxlauncher.site/",
+              actions: [
+                {
+                  label: "Tải xuống (v1.1.6)",
+                  url: "https://github.com/IsraaDeveloper/nuxlabs/releases/download/v1.1.6/nuxlauncher-v1.1.6.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://www.nuxlauncher.site/screenshot_dashboard.png",
+              previewImages: [
+                "https://www.nuxlauncher.site/screenshot_dashboard.png"
+              ],
+              metaExtra: "NUX Team · 0 IDR",
+              marketplaceUrl: "https://www.nuxlauncher.site/"
             }
           ]
         },
