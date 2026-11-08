@@ -106,8 +106,8 @@ const CONFIG = {
               source: "https://github.com/ItsVynzzzz/AmberLauncher",
               actions: [
                 {
-                  label: "Tải xuống (v0.1.0-beta.62)",
-                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/uji/AmberLauncher-0.1.0-beta.66.uji.148-64bit-arm64-v8a.apkk",
+                  label: "Tải xuống (v0.1.0-beta.67)",
+                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/v0.1.0-beta.67/AmberLauncher-0.1.0-beta.67-64bit-arm64-v8a.apk",
                   primary: true
                 }
               ],
