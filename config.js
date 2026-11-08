@@ -394,7 +394,7 @@ const CONFIG = {
               title: "Gui |Medieval Shop GUI (ShopGui+)",
               subtitle: "Nguồn MCModels",
               description: "CREATED BY[Turtle Pixels](https://mcmodels.net/vendors/53/turtle-pixels)56 products · 63 followers",
-              image: "https://api.mcmodels.net/storage/product-images/9409/01JXFSEJT55GQNF6Y9FH0VJ9JZ.png",
+              image: "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6YR66A08E1Q818JS38.png",
               source: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui",
               actions: [
                 {
@@ -405,12 +405,33 @@ const CONFIG = {
               ],
               banner: "https://api.mcmodels.net/storage/product-images/8664/01JXFRYJYC47BHQGVNJGQ6N1WZ.png",
               previewImages: [
-                "https://api.mcmodels.net/storage/product-images/8664/01JXFRYJYC47BHQGVNJGQ6N1WZ.png",
-                "https://api.mcmodels.net/storage/product-images/9564/g2vgT3WJv3Bcrean.png",
-                "https://api.mcmodels.net/storage/product-images/9605/2953dNJSuZ7ujbeMELuyQJMNxMl1g5nWq9SBKxQr.png"
+                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6YR66A08E1Q818JS38.png",
+                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6V46C9ZH329KK6TR8N.png",
+                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N77XEF432G43H84NAES.png",
+                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N792AF4A90PDHTX0Z72.png"
               ],
               metaExtra: "Nguồn MCModels",
               marketplaceUrl: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui"
+            },
+            {
+              title: "Custom Gui Lands",
+              subtitle: "by Taco studio",
+              description: "The Lands plugin is quite extensive and packed with numerous settings, buttons, and menus. You can make suggestions on our Discord. English is not your language? Don't worry, it includes the alphabet and all untitled menus so you can translate it to your language.",
+              image: "https://builtbybit.com/attachments/cover-lands-v2-png.709836/?preset=fullr2",
+              source: "https://builtbybit.com/resources/custom-gui-lands.32851/",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1VKpRcBo_b7Vwk-aBkaHXkIoOVo71C_1G",
+                  primary: true
+                }
+              ],
+              banner: "https://builtbybit.com/attachments/cover-lands-v2-png.709836/?preset=fullr2",
+              previewImages: [
+                "https://builtbybit.com/attachments/p%C3%A1gina_venta_lands-png.709844/?preset=fullr2"
+              ],
+              metaExtra: "BuiltByBit",
+              marketplaceUrl: "https://builtbybit.com/resources/custom-gui-lands.32851/"
             }
           ]
         },
