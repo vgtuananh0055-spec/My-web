@@ -815,9 +815,9 @@ const CONFIG = {
     }
   },
   welcome: {
-    active: false,
+    active: true,
     title: "Hello - KaiTouu đây",
-    desc: "Hiện tại web vừa được khởi chạy và đang được cục viễn thông với cục an ninh mạng xét duyệt nên lâu lâu sẽ có thông báo đó nhá anh em thông cảm",
+    desc: "Đối với Bedrock thì toàn bộ được lấy từ marketplace (shop chinhd thức) của minecraft nên chắc có thể web sẽ bị ăn gậy\nKo có Addon hay texturepack nào thì anh em cứ nói nha\nVÀ HÃY PHÂN BIỆT ĐƯỢC GIỮA ADDON, TEXTUREPACK VỚI MOD VÀ RESOURCES PACK",
     btn: "Đã hiểu & Tiếp tục"
   }
 };
