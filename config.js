@@ -54,7 +54,7 @@ const CONFIG = {
               subtitle: "by KaiTouu",
               description: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
               image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png",
-              source: "*",
+              source: "https://github.com/vgtuananh0055-spec/KaiLauncher",
               actions: [
                 {
                   label: "Tải bản mới nhất",
@@ -62,66 +62,8 @@ const CONFIG = {
                   primary: true
                 }
               ],
-              previewImages: [
-                "https://i.postimg.cc/zvddLTgQ/Screenshot-2026-11-08-08-09-18-062-com-russoviller-cryogenic.jpg",
-                "https://i.postimg.cc/J0hxWt2Q/Screenshot-2026-11-07-18-05-44-780-com-russoviller-cryogenic.jpg"
-              ],
-              metaExtra: "KaiTouu",
-              marketplaceUrl: "https://github.com/vgtuananh0055-spec/KaiLauncher"
-            },
-            {
-              title: "Horizon - launcher",
-              subtitle: "by starling-client",
-              description: "Starling, formerly Horizon Android: Android port of Horizon (Rust Minecraft 26.3) with Vulkan, editable touch controls and native .hmod mods.",
-              image: "https://raw.githubusercontent.com/starling-client/starling/refs/heads/android/packaging/icons/hicolor/128x128/apps/horizon.png",
-              source: "https://github.com/starling-client/starling",
-              actions: [
-                {
-                  label: "Tải xuống (v0.7.8)",
-                  url: "https://github.com/starling-client/starling/releases/download/v0.7.8/Horizon-Android-0.7.8-arm64-v8a.apk",
-                  primary: true
-                }
-              ],
-              banner: "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
-              previewImages: [
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/dpad-river.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/snow-landscape.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/third-person-desert.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/desert-panorama.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-menu.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-gameplay.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/banner.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-play.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-settings.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/sunset.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/survival.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/settings.webp"
-              ],
-              metaExtra: "starling-client · ⭐ 661 · v0.7.8 · Rust",
-              marketplaceUrl: "https://github.com/starling-client/starling/tree/android",
-              github: "https://github.com/starling-client/starling"
-            },
-            {
-              title: "AmberLauncher",
-              subtitle: "by ItsVynzzzz",
-              description: "Launcher minecraft java untuk android dengan fitur yang lebih sedikit",
-              image: "https://raw.githubusercontent.com/ItsVynzzzz/AmberLauncher/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
-              source: "https://github.com/ItsVynzzzz/AmberLauncher",
-              actions: [
-                {
-                  label: "Tải xuống (v0.1.0-beta.67)",
-                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/v0.1.0-beta.67/AmberLauncher-0.1.0-beta.67-64bit-arm64-v8a.apk",
-                  primary: true
-                }
-              ],
-              banner: "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher",
-              previewImages: [
-                "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher"
-              ],
-              metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.66 · Kotlin",
-              marketplaceUrl: "https://github.com/ItsVynzzzz/AmberLauncher",
-              github: "https://github.com/ItsVynzzzz/AmberLauncher"
+              marketplaceUrl: "https://github.com/vgtuananh0055-spec/KaiLauncher",
+              github: "https://github.com/vgtuananh0055-spec/KaiLauncher"
             },
             {
               title: "RayLauncher",
@@ -145,24 +87,25 @@ const CONFIG = {
               github: "https://github.com/KedaMC/RayLauncher"
             },
             {
-              title: "NUX Launcher",
-              subtitle: "by NUX Team",
-              description: "High-performance Minecraft launcher for Windows & Android featuring parallel downloads, built-in low-latency Voice Rooms, multi-account profile management, and custom instance isolation.",
-              image: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
-              source: "https://www.nuxlauncher.site/",
+              title: "AmberLauncher",
+              subtitle: "by ItsVynzzzz",
+              description: "Launcher minecraft java untuk android dengan fitur yang lebih sedikit",
+              image: "https://avatars.githubusercontent.com/u/333234362?v=4",
+              source: "https://github.com/ItsVynzzzz/AmberLauncher",
               actions: [
                 {
-                  label: "Tải xuống (v1.1.6)",
-                  url: "https://github.com/IsraaDeveloper/nuxlabs/releases/download/v1.1.6/nuxlauncher-v1.1.6.apk",
+                  label: "Tải xuống (v0.1.0-beta.62)",
+                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/v0.1.0-beta.62/AmberLauncher-0.1.0-beta.62-64bit-arm64-v8a-RECOMMENDED.apk",
                   primary: true
                 }
               ],
-              banner: "https://www.nuxlauncher.site/screenshot_dashboard.png",
+              banner: "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher",
               previewImages: [
-                "https://www.nuxlauncher.site/screenshot_dashboard.png"
+                "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher"
               ],
-              metaExtra: "NUX Team · 0 IDR",
-              marketplaceUrl: "https://www.nuxlauncher.site/"
+              metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.62 · Kotlin",
+              marketplaceUrl: "https://github.com/ItsVynzzzz/AmberLauncher",
+              github: "https://github.com/ItsVynzzzz/AmberLauncher"
             }
           ]
         },
@@ -394,7 +337,7 @@ const CONFIG = {
               title: "Gui |Medieval Shop GUI (ShopGui+)",
               subtitle: "Nguồn MCModels",
               description: "CREATED BY[Turtle Pixels](https://mcmodels.net/vendors/53/turtle-pixels)56 products · 63 followers",
-              image: "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6YR66A08E1Q818JS38.png",
+              image: "https://api.mcmodels.net/storage/product-images/9409/01JXFSEJT55GQNF6Y9FH0VJ9JZ.png",
               source: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui",
               actions: [
                 {
@@ -405,33 +348,12 @@ const CONFIG = {
               ],
               banner: "https://api.mcmodels.net/storage/product-images/8664/01JXFRYJYC47BHQGVNJGQ6N1WZ.png",
               previewImages: [
-                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6YR66A08E1Q818JS38.png",
-                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N6V46C9ZH329KK6TR8N.png",
-                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N77XEF432G43H84NAES.png",
-                "https://api.mcmodels.net/storage/product-images/14399/01JYM87N792AF4A90PDHTX0Z72.png"
+                "https://api.mcmodels.net/storage/product-images/8664/01JXFRYJYC47BHQGVNJGQ6N1WZ.png",
+                "https://api.mcmodels.net/storage/product-images/9564/g2vgT3WJv3Bcrean.png",
+                "https://api.mcmodels.net/storage/product-images/9605/2953dNJSuZ7ujbeMELuyQJMNxMl1g5nWq9SBKxQr.png"
               ],
               metaExtra: "Nguồn MCModels",
               marketplaceUrl: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui"
-            },
-            {
-              title: "Custom Gui Lands",
-              subtitle: "by Taco studio",
-              description: "The Lands plugin is quite extensive and packed with numerous settings, buttons, and menus. You can make suggestions on our Discord. English is not your language? Don't worry, it includes the alphabet and all untitled menus so you can translate it to your language.",
-              image: "https://builtbybit.com/attachments/cover-lands-v2-png.709836/?preset=fullr2",
-              source: "https://builtbybit.com/resources/custom-gui-lands.32851/",
-              actions: [
-                {
-                  label: "Tải xuống",
-                  url: "https://drive.google.com/uc?export=download&id=1VKpRcBo_b7Vwk-aBkaHXkIoOVo71C_1G",
-                  primary: true
-                }
-              ],
-              banner: "https://builtbybit.com/attachments/cover-lands-v2-png.709836/?preset=fullr2",
-              previewImages: [
-                "https://builtbybit.com/attachments/p%C3%A1gina_venta_lands-png.709844/?preset=fullr2"
-              ],
-              metaExtra: "BuiltByBit",
-              marketplaceUrl: "https://builtbybit.com/resources/custom-gui-lands.32851/"
             }
           ]
         },
