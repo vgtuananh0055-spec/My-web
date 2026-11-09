@@ -160,6 +160,53 @@ const CONFIG = {
               metaExtra: "IsraaDeveloper · ⭐ 6 · v1.1.6 · Kotlin",
               marketplaceUrl: "https://github.com/IsraaDeveloper/nuxlabs",
               github: "https://github.com/IsraaDeveloper/nuxlabs"
+            },
+            {
+              title: "PojavLauncher",
+              subtitle: "by pojavlauncherteam",
+              description: "A Minecraft: Java Edition Launcher for Android and iOS based on Boardwalk. Succeeded by https://github.com/AngelAuraMC/Amethyst-Android",
+              image: "https://avatars.githubusercontent.com/u/69146964?v=4",
+              source: "https://github.com/PojavLauncherTeam/PojavLauncher",
+              actions: [
+                {
+                  label: "Tải xuống (gladiolus)",
+                  url: "https://github.com/PojavLauncherTeam/PojavLauncher/releases/download/gladiolus/PojavLauncher.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://raw.githubusercontent.com/PojavLauncherTeam/PojavLauncher/v3_openjdk/app_pojavlauncher/src/main/assets/pojavlauncher.png",
+              previewImages: [
+                "https://raw.githubusercontent.com/PojavLauncherTeam/PojavLauncher/v3_openjdk/app_pojavlauncher/src/main/assets/pojavlauncher.png",
+                "https://opengraph.githubassets.com/1/pojavlauncherteam/pojavlauncher"
+              ],
+              metaExtra: "pojavlauncherteam · ⭐ 9.506 · gladiolus · Java",
+              marketplaceUrl: "https://github.com/pojavlauncherteam/pojavlauncher",
+              github: "https://github.com/PojavLauncherTeam/PojavLauncher"
+            },
+            {
+              title: "FoldCraftLauncher",
+              subtitle: "by FCL-Team",
+              description: "Fold Craft Launcher, an Android Minecraft : Java Edition launcher.",
+              image: "https://avatars.githubusercontent.com/u/114871581?v=4",
+              source: "https://github.com/FCL-Team/FoldCraftLauncher",
+              actions: [
+                {
+                  label: "Tải xuống (1.3.4.5)",
+                  url: "https://github.com/FCL-Team/FoldCraftLauncher/releases/download/1.3.4.5/FCL-release-1.3.4.5-all.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://raw.githubusercontent.com/FCL-Team/FoldCraftLauncher/main/FCL/src/main/res/drawable/img_app.png",
+              previewImages: [
+                "https://raw.githubusercontent.com/FCL-Team/FoldCraftLauncher/main/FCL/src/main/res/drawable/img_app.png",
+                "https://raw.githubusercontent.com/FCL-Team/FoldCraftLauncher/main/.github/images/ui_main_light.jpg",
+                "https://raw.githubusercontent.com/FCL-Team/FoldCraftLauncher/main/.github/images/ui_main_dark.jpg",
+                "https://raw.githubusercontent.com/FCL-Team/FoldCraftLauncher/main/.github/images/game.jpg",
+                "https://opengraph.githubassets.com/1/FCL-Team/FoldCraftLauncher"
+              ],
+              metaExtra: "FCL-Team · ⭐ 5.163 · 1.3.4.5 · Java",
+              marketplaceUrl: "https://github.com/FCL-Team/FoldCraftLauncher",
+              github: "https://github.com/FCL-Team/FoldCraftLauncher"
             }
           ]
         },
