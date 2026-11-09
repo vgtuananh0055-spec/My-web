@@ -58,7 +58,7 @@ const CONFIG = {
               actions: [
                 {
                   label: "Tải bản mới nhất",
-                  url: "https://github.com/vgtuananh0055-spec/KaiLauncher/releases/download/Launcher/Kai.Launcher_r1.0.0.apk",
+                  url: "https://drive.google.com/uc?export=download&id=1eNocvN0ZyupX5Dg4iBGR92vJ7gVcYMhQ",
                   primary: true
                 }
               ],
