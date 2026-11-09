@@ -139,6 +139,27 @@ const CONFIG = {
               metaExtra: "starling-client · ⭐ 730 · v0.7.8 · Rust",
               marketplaceUrl: "https://github.com/starling-client/starling",
               github: "https://github.com/starling-client/starling"
+            },
+            {
+              title: "nuxlabs",
+              subtitle: "by IsraaDeveloper",
+              description: "Launcher minecraft java untuk android dengan fitur yang lengkap",
+              image: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
+              source: "https://github.com/IsraaDeveloper/nuxlabs",
+              actions: [
+                {
+                  label: "Tải xuống (v1.1.6)",
+                  url: "https://github.com/IsraaDeveloper/nuxlabs/releases/download/v1.1.6/nuxlauncher-v1.1.6.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
+              previewImages: [
+                "https://opengraph.githubassets.com/1/IsraaDeveloper/nuxlabs"
+              ],
+              metaExtra: "IsraaDeveloper · ⭐ 6 · v1.1.6 · Kotlin",
+              marketplaceUrl: "https://github.com/IsraaDeveloper/nuxlabs",
+              github: "https://github.com/IsraaDeveloper/nuxlabs"
             }
           ]
         },
