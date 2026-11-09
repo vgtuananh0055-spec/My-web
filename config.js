@@ -719,6 +719,26 @@ const CONFIG = {
               marketplaceUrl: "https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/actions--stuff-1.13/61c7a786-d7ad-49e0-a710-817121cd9795"
             },
             {
+              title: "Actions & Stuff: Flat Textures",
+              subtitle: "by Oreville Studios",
+              description: "Flat Textures by Oreville",
+              image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg",
+              source: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1udIJeJfi_-lOd7AVKLzF4qNqcbg1LesU",
+                  primary: true
+                }
+              ],
+              banner: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpgenshot_2.jpg",
+              previewImages: [
+                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg"
+              ],
+              metaExtra: "Oreville Studios",
+              marketplaceUrl: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d"
+            },
+            {
               title: "Scary Visuals",
               subtitle: "by Chunklabs",
               description: "Search  Close search  Suggested searches   Popular Discoveries  ![Image 62: Steve and Alex on a grassy hill in the daytime with other mobs and characters in the backgroundMinecraft](https://www.minecraft.net/en-us/about-minecraft)  ![Image 63: Minecraft characters look at various new content available on the marketplaceSkins & DLC](https://www.minecraft.net/en-us/marketplace)  ![Image 64: Steve, Alex, and various other characters standing in dark room.Change Java Skins & Capes](https://www.minecraft.net/en-us/msaprofile/mygames/editskin)  ![Image 65: Steve, Alex, and various other characters and animals burst out of a nether portal below text reading: Minecraft RealmsMinecraft Realms](https://www.minecraft.net/en-us/realms)\n\nMinecraft Java & Bedrock Minecraft Dungeons II Minecraft Dungeons Minecraft Legends Minecraft Education",
@@ -743,24 +763,25 @@ const CONFIG = {
               marketplaceUrl: "https://www.minecraft.net/en-us/marketplace/pdp/chunklabs/scary-visuals/a1fbcaf9-5e43-4a48-9447-5ad08c8b0f3c"
             },
             {
-              title: "Actions & Stuff: Flat Textures",
-              subtitle: "by Oreville Studios",
-              description: "Flat Textures by Oreville",
-              image: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg",
-              source: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d",
+              title: "Play Wilderness Bound",
+              subtitle: "by Minecraft Marketplace",
+              description: "Wilderness Bound là một bản cập nhật trò chơi được phát hành vào ngày 15 tháng 9 năm 2026. Nó tập trung vào quần xã sinh vật rừng lốm đốm , bổ sung cây dương với ba màu lá khác nhau , một loại gỗ mới và các khối tự nhiên mới. Nó cũng bổ sung cầu thang và tấm lát cho bê tông và len , đệm , giường rơm , trại bỏ hoang và bản đồ được cải tiến . Nó được công bố tại Minecraft Live – tháng 5 năm 2026",
+              image: "https://minecraft.wiki/images/Wilderness_Bound_Key_Art_with_text.jpeg?55bcf",
+              source: "https://www.minecraft.net/en-us/updates/wilderness-bound-drop",
               actions: [
                 {
                   label: "Tải xuống",
-                  url: "https://drive.google.com/uc?export=download&id=1udIJeJfi_-lOd7AVKLzF4qNqcbg1LesU",
+                  url: "https://drive.google.com/uc?export=download&id=1PCk0xvEjMY2r2pqOT0378CKPn31pJPF-",
                   primary: true
                 }
               ],
-              banner: "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpgenshot_2.jpg",
+              banner: "https://minecraft.wiki/images/Wilderness_Bound_Key_Art_with_text.jpeg?55bcf",
               previewImages: [
-                "https://content2.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/d8981720-c971-4e26-882c-8983b6c7f7b1/actionsandstuffflattextures_Thumbnail_0.jpg"
+                "https://minecraft.wiki/images/thumb/Minecraft_Wilderness_Bound_.Net.jpg/1280px-Minecraft_Wilderness_Bound_.Net.jpg?a2656",
+                "https://minecraft.wiki/images/thumb/Wilderness_Bound_Haunts_And_Harvest_key_art.webp/1280px-Wilderness_Bound_Haunts_And_Harvest_key_art.webp?5563e"
               ],
-              metaExtra: "Oreville Studios",
-              marketplaceUrl: "https://www.minecraft.net/pt-br/marketplace/pdp/oreville-studios/actions--stuff:-flat-textures/c627051d-d062-4322-a533-a7b52238500d"
+              metaExtra: "Minecraft Marketplace",
+              marketplaceUrl: "https://www.minecraft.net/en-us/updates/wilderness-bound-drop"
             }
           ]
         },
