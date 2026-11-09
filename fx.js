@@ -9,11 +9,14 @@
 
   addEventListener("hashchange", () => {
     const n = idx(); if (n !== cur) { root.style.setProperty("--dir", n > cur ? 1 : -1); buzz(8); cur = n; }
+    scrollTo({top:0,behavior:"instant"}); // cuộn lên đầu ngay, tránh cuộn mượt trong lúc chuyển
   });
   new MutationObserver(() => {
-    if (rm || !view.firstChild) return;
-    const d = +getComputedStyle(root).getPropertyValue("--dir") || 1;
-    view.animate([{opacity:0,transform:`translateX(${d*48}px)`},{opacity:1,transform:"none"}], {duration:380,easing:"cubic-bezier(.22,1,.36,1)"});
+    if (!view.firstChild) return;
+    view.querySelectorAll("img").forEach(im => { im.decoding = "async"; });
+    if (rm) return;
+    const d = +root.style.getPropertyValue("--dir") || 1;
+    view.animate([{opacity:.4,transform:`translateX(${d*36}px)`},{opacity:1,transform:"none"}], {duration:320,easing:"cubic-bezier(.22,1,.36,1)"});
   }).observe(view, {childList:true});
 
   // Vuốt trái/phải đổi tab (không dùng khi đang cuộn dọc / trong khung cuộn ngang)
@@ -46,6 +49,18 @@
       c = e.target.closest(".card"); if (!c) return; mx = e.clientX; my = e.clientY;
       if (t) return; t = requestAnimationFrame(() => { t = 0; if (!c) return; const r = c.getBoundingClientRect();
         c.style.setProperty("--mx", (mx - r.left) / r.width * 100 + "%"); c.style.setProperty("--my", (my - r.top) / r.height * 100 + "%"); });
+    }, {passive:true});
+  }
+
+  // Parallax banner khi cuộn (nhẹ: gộp theo khung hình, dừng khi banner đã ra khỏi màn hình)
+  if (!rm) {
+    let tk = false, last = -1;
+    addEventListener("scroll", () => {
+      if (tk) return; tk = true;
+      requestAnimationFrame(() => { tk = false;
+        const y = Math.min(scrollY, 500); if (y === last) return; last = y;
+        const i = document.querySelector(".hbg i"); if (i) i.style.transform = `translate3d(0,${y * .25}px,0) scale(1.15)`;
+      });
     }, {passive:true});
   }
   view.addEventListener("click", e => { if (e.target.closest(".btn,.favb,.fchip")) buzz(10); });

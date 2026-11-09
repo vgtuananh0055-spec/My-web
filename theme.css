@@ -19,7 +19,7 @@ h1,h2,h3,.brand b{font-family:var(--disp);letter-spacing:-.02em}
 .seg a:active{transform:scale(.92)}
 .seg a[aria-current=page] svg{animation:hop .6s var(--spring)}
 @keyframes hop{0%{transform:none}40%{transform:translateY(-5px) scale(1.18)}100%{transform:none}}
-.glider{background:linear-gradient(135deg,var(--lime),var(--cyan));border:0;box-shadow:0 0 0 2px #0a0a0a inset,0 6px 22px color-mix(in srgb,var(--lime) 55%,transparent);transition:transform .55s var(--spring),width .55s var(--spring),height .3s!important}
+.glider{background:linear-gradient(135deg,var(--lime),var(--cyan));border:0;box-shadow:0 0 0 2px #0a0a0a inset,0 6px 22px color-mix(in srgb,var(--lime) 55%,transparent);transition:transform .4s var(--spring),width .3s var(--ease),height .3s!important}
 .seg a[aria-current=page]{color:#0b0b10}
 
 /* Hero: poster, tiêu đề khổng lồ */
@@ -69,10 +69,9 @@ h1,h2,h3,.brand b{font-family:var(--disp);letter-spacing:-.02em}
 .nv{border-radius:14px;transition:transform .4s var(--spring),background .3s}.nv:hover{transform:translateX(6px)}
 .nv[aria-current=page]{background:var(--lime);color:#0b0b10;box-shadow:4px 4px 0 #000}
 
-/* Chuyển tab: trượt theo hướng + mờ */
-#view{transition:opacity .2s,transform .28s var(--ease)}
-#view.fade-out{opacity:0;transform:translateX(calc(var(--dir)*-44px))}
-#view.drag{transition:none}
+/* Chuyển tab: chỉ transform + opacity (nhẹ, không có khoảng trống) */
+#view{transition:none}
+#view.fade-out{opacity:.5;transform:translateX(calc(var(--dir)*-32px));transition:opacity .15s linear,transform .18s var(--ease)}
 
 /* Sheet chi tiết & palette: bật lên kiểu lò xo */
 .dlg.on .sheet{animation:sheetup .55s var(--spring)}.pal.on .pbox{animation:sheetup .45s var(--spring)}
@@ -82,3 +81,14 @@ h1,h2,h3,.brand b{font-family:var(--disp);letter-spacing:-.02em}
 
 @media (hover:none){.bgfx i,.orb{animation:none}.card::before{display:none}}
 @media (prefers-reduced-motion:reduce){.bgfx i,.orb{animation:none}.card{animation:none}}
+
+/* ===== TỐI ƯU HIỆU NĂNG ===== */
+/* Bỏ backdrop-filter trên mọi phần tử luôn hiển thị (nguyên nhân lag chính khi chuyển tab) */
+.glass,.card,.tile,.fchip,.ib,.favb,.htile,.sbox,.sortw,.lay,.seg,.smedia .nav,.hero .kick{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+:root[data-theme=dark] .card,:root[data-theme=dark] .tile,:root[data-theme=dark] .fchip,:root[data-theme=dark] .sbox{background-color:rgba(24,19,40,.9)}
+/* Thẻ hiện cùng lúc với trang, không còn trễ theo thứ tự */
+.card,.tile{animation:cardin .3s ease both!important;animation-delay:0s!important}
+@keyframes cardin{from{opacity:0;transform:translateY(12px)}}
+.card:nth-child(n+7),.tile:nth-child(n+7){animation:none!important}
+html{scroll-behavior:auto}
+.card,.tile,.fchip{contain:layout style}
