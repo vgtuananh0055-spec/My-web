@@ -272,6 +272,36 @@ const CONFIG = {
               marketplaceUrl: "https://builtbybit.com/resources/ecoenchants.23935/?ref=370673"
             },
             {
+              title: "EcoSkills",
+              subtitle: "Nguồn Eco",
+              description: "Thêm một hệ thống RPG hoàn chỉnh vào máy chủ của bạn mà bạn có thể tùy chỉnh theo bất kỳ cách nào bạn muốn.",
+              image: "https://i.postimg.cc/fTMsRpfs/Header.gif",
+              source: "https://mcmodels.net/vi/products/16911/ecoskills?srsltid=AYCX9vLjVa9BDzaJuWP75LrrMLQpJdtpJ10BkwuKnmet65PJ2WcFn8AN",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1bey4ED9ci8R-fWdOacRTPfbmMbXP6TjF",
+                  primary: true
+                }
+              ],
+              banner: "https://i.postimg.cc/pL6MkTN0/GUI-Progression.gif",
+              previewImages: [
+                "https://i.postimg.cc/pL6MkTN0/GUI-Progression.gif",
+                "https://i.postimg.cc/FHRQjS6M/Make-Skills.gif",
+                "https://i.postimg.cc/YCsB89cJ/Premade-Setup.gif",
+                "https://i.postimg.cc/FHBXGRtq/Stats-and-Effects.gif",
+                "https://i.postimg.cc/jSFYv5Vp/Mana.gif",
+                "https://i.postimg.cc/SxvbVs0T/Damage-Indicators.gif",
+                "https://i.postimg.cc/9QMjG9SH/Custom-Items.gif",
+                "https://i.postimg.cc/W1HcS3LV/Sync.gif",
+                "https://i.postimg.cc/h4CxPzHR/header.gif",
+                "https://i.postimg.cc/ZYf3KBX2/most_effects.gif",
+                "https://i.postimg.cc/MHrjsNyb/endless_conditions.gif"
+              ],
+              metaExtra: "Nguồn MCModels",
+              marketplaceUrl: "https://mcmodels.net/vi/products/16911/ecoskills?srsltid=AYCX9vLjVa9BDzaJuWP75LrrMLQpJdtpJ10BkwuKnmet65PJ2WcFn8AN"
+            },
+            {
               title: "AdvancedEnchantments",
               subtitle: "by BuiltByBit",
               description: "Plugin enchant.\n\nHơn 400 Phù phép Tùy chỉnh - Hỗ trợ Bàn phù phép & Đe - Hơn 20 Vật phẩm, hỗ trợ tùy chỉnh thông số và kỹ năng qua YAML file.",
@@ -394,6 +424,33 @@ const CONFIG = {
               marketplaceUrl: "https://advancedplugins.net/item/AdvancedCrates.9"
             },
             {
+              title: "Quests Plugin - BattlePass | AdvancedPlugins",
+              subtitle: "Nguồn advancedplugins.net",
+              description: "Plugin nhiệm vụ tiên tiến nhất, với hơn 50 nhiệm vụ - Tự tạo nhiệm vụ - Trình chỉnh sửa giao diện người dùng - Giữ chân người chơi - Nhiệm vụ hàng ngày và hàng tuần",
+              image: "https://advancedplugins.net/img/bp/logo-min.png",
+              source: "https://advancedplugins.net/item/BattlePass.11",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1QJl-Gl7X5riXvs5Jg_SrjeUy8FoOIVIU",
+                  primary: true
+                }
+              ],
+              banner: "https://advancedplugins.net/img/bp/top-used-min.png",
+              previewImages: [
+                "https://advancedplugins.net/img/bp/daily-weekly-quests.gif",
+                "https://advancedplugins.net/img/bp/rewards.gif",
+                "https://advancedplugins.net/img/bp/quests-min.png",
+                "https://advancedplugins.net/api/cache.php?url=https://i.imgur.com/XzGwdy1.png",
+                "https://advancedplugins.net/img/bp/create-quests-min.png",
+                "https://advancedplugins.net/img/bp/leaderboard-min.png",
+                "https://advancedplugins.net/img/bp/npc.gif",
+                "https://advancedplugins.net/img/bp/logo-min.png"
+              ],
+              metaExtra: "Nguồn advancedplugins.net",
+              marketplaceUrl: "https://advancedplugins.net/item/BattlePass.11"
+            },
+            {
               title: "Advanced Kits",
               subtitle: "by BuiltByBit",
               description: "Tài nguyên Advanced Kits trên BuiltByBit.",
@@ -412,6 +469,35 @@ const CONFIG = {
               ],
               metaExtra: "BuiltByBit",
               marketplaceUrl: "https://builtbybit.com/resources/advanced-kits.109727/it-vouchers%E2%9C%A8animations%E2%9C%A8mysql-yaml%E2%9A%A1%EF%B8%8Fv1-8-8-1-20%E2%9C%A6.332/"
+            },
+            {
+              title: "Combatpets",
+              subtitle: "by BuiltByBit",
+              description: "Tài nguyên Combatpets Battle Pets With Leveling trên BuiltByBit.",
+              image: "https://builtbybit.com/attachments/622da08ecd679cc0563517cd39726732f19025ef-png.857270/?preset=fullr2",
+              source: "https://builtbybit.com/resources/combatpets-battle-pets-with-leveling.56344/",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1P7D-yvqAA5Cd3G4JSJNAQwRMwrX11GHd",
+                  primary: true
+                }
+              ],
+              previewImages: [
+                "https://proxy.spigotmc.org/ecaf197349e744dabd5dc98546edd0cb7d6cc31e/68747470733a2f2f69696c692e696f2f64616a71766e652e77656270",
+                "https://proxy.spigotmc.org/a8e6b0d7c6df8db62442dde4eec4f4a81a42c7d2/68747470733a2f2f69696c692e696f2f64616a714c74312e77656270",
+                "https://proxy.spigotmc.org/631df327e7aa7fdcc92ccba859b6e560b4b36f06/68747470733a2f2f69696c692e696f2f64616a71744d672e77656270",
+                "https://proxy.spigotmc.org/e08a69b073813ac3684899d5803954bc8888ba48/68747470733a2f2f69696c692e696f2f64616a716d4b4a2e77656270",
+                "https://proxy.spigotmc.org/69111c35cf60b82874d485716a2b05e0e0177d18/68747470733a2f2f69696c692e696f2f64616a424a414e2e77656270",
+                "https://proxy.spigotmc.org/061ba16d6c0db234e62ea8a3608198bc53536f8c/68747470733a2f2f69696c692e696f2f64616a424b566e2e77656270",
+                "https://proxy.spigotmc.org/f2a68c73b7310efe9e96c7e1bb2f8186e424d05c/68747470733a2f2f69696c692e696f2f64616a42436c662e77656270",
+                "https://proxy.spigotmc.org/47d16533b5489221e3ec4d4695c348acc9354b34/68747470733a2f2f69696c692e696f2f64616a713438512e77656270",
+                "https://proxy.spigotmc.org/9f10fbe3f18996d2ef77b6c5a7bc129f58b69122/68747470733a2f2f69696c692e696f2f64616a717377502e77656270",
+                "https://proxy.spigotmc.org/4dde8eaf478474da7dbd277147f1b31a5122d5f2/68747470733a2f2f69696c692e696f2f64616a426e53342e77656270",
+                "https://proxy.spigotmc.org/66c4752ee3d75adc7192ce9e171d63da974b2f4a/68747470733a2f2f69696c692e696f2f64616a427a52322e77656270"
+              ],
+              metaExtra: "BuiltByBit",
+              marketplaceUrl: "https://builtbybit.com/resources/combatpets-battle-pets-with-leveling.56344/"
             }
           ]
         },
