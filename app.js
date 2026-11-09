@@ -427,12 +427,8 @@ function route() {
   
   const viewEl = $("view");
   if (!isFirst) {
-    viewEl.classList.add("fade-out"); // Bắt đầu hiệu ứng mờ đi
-    setTimeout(() => {
-      view(); // Đổi nội dung HTML
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      requestAnimationFrame(() => viewEl.classList.remove("fade-out")); // Hiện mượt lên lại
-    }, 200); // Đợi 200ms cho mờ hẳn rồi mới đổi
+    view(); // Đổi nội dung ngay (không chờ) — hiệu ứng vào do fx.js đảm nhiệm
+    window.scrollTo({ top: 0, behavior: "auto" });
   } else {
     view();
   }
