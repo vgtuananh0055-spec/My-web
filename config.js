@@ -1,7 +1,7 @@
 const CONFIG = {
   name: "KaiTouu",
   avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNdIPMRSMCZegy_um0-5axJz3MXQqY6MCBtO4SnH7oFXZpJF9hXkk2Hb5t&s=10",
-  globalBg: "",
+  globalBg: "https://server.wallpaperalchemy.com/storage/wallpapers/259/minecraft-4k-wallpaper-sunlit-forest-canopy.jpg",
   ui: {
     primaryColor: "#c4b5fd",
     titleGrad1: "#ff0000",
