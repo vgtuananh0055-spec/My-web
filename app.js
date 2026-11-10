@@ -87,6 +87,7 @@ const APP = {
   facebook: { bg: "linear-gradient(160deg,#3b8cff,#0b57e0)", svg: '<path fill="#fff" d="M13.4 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.6-1.5h1.6V4.3C16.3 4.2 15.4 4 14.3 4c-2.3 0-3.9 1.4-3.9 4v2.4H7.8v3h2.6V21z"/>' },
   tiktok: { bg: "linear-gradient(160deg,#25252d,#070709)", svg: '<g fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(-.7 -.7)" stroke="#25f4ee" d="M14 4v10.4a3.4 3.4 0 1 1-3.4-3.4M14 4c.4 2.5 2 4 4.6 4.3"/><path transform="translate(.7 .7)" stroke="#fe2c55" d="M14 4v10.4a3.4 3.4 0 1 1-3.4-3.4M14 4c.4 2.5 2 4 4.6 4.3"/><path stroke="#fff" d="M14 4v10.4a3.4 3.4 0 1 1-3.4-3.4M14 4c.4 2.5 2 4 4.6 4.3"/></g>' },
   telegram: { bg: "linear-gradient(160deg,#37b6f5,#1d8fd0)", svg: '<path fill="#fff" d="M3 11.2 20.5 4.2c.8-.3 1.5.2 1.3 1.2l-3 14c-.2 1-.8 1.2-1.6.7l-4.6-3.4-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.7 8.5-7.7c.4-.3-.1-.5-.6-.2L7.3 13.5 2.8 12.1c-1-.3-1-1 .2-1.5z"/>' },
+  discord: { bg: "linear-gradient(160deg,#6d78ff,#4350e0)", svg: '<path fill="#fff" d="M18.6 5.6A15.7 15.7 0 0 0 14.7 4.4l-.5 1a14.6 14.6 0 0 0-4.4 0l-.5-1a15.7 15.7 0 0 0-3.9 1.2C3.4 9.3 2.7 12.9 3 16.5a15.9 15.9 0 0 0 4.8 2.4l1-1.6c-.5-.2-1-.4-1.5-.7l.4-.3a11.3 11.3 0 0 0 9.6 0l.4.3c-.5.3-1 .5-1.5.7l1 1.6a15.9 15.9 0 0 0 4.8-2.4c.4-4.2-.7-7.8-2.9-10.9z"/><circle cx="9.1" cy="12.2" r="1.7" fill="#4f5bea"/><circle cx="14.9" cy="12.2" r="1.7" fill="#4f5bea"/>' },
   youtube: { bg: "linear-gradient(160deg,#ff3b4f,#d9001e)", svg: '<path fill="#fff" fill-rule="evenodd" d="M7 5h10a5 5 0 0 1 5 5v4a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5v-4a5 5 0 0 1 5-5zM10 8.8v6.4l5.4-3.2z"/>' },
   spotify: { bg: "linear-gradient(160deg,#1db954,#127a35)", svg: '<path fill="#fff" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm4.6 14.4c-.2.3-.5.4-.8.2-2.1-1.3-4.8-1.6-7.9-.9-.4.1-.7-.2-.8-.6-.1-.4.2-.7.6-.8 3.5-.7 6.5-.4 8.8 1 .3.2.4.6.1 1.1zm1.1-2.4c-.2.4-.7.5-1 .3-2.5-1.5-6.3-2-8.5-1.1-.5.2-1-.1-1.2-.6-.2-.5.1-1 .6-1.2 2.6-1.1 6.9-.5 9.8 1.3.4.2.6.8.3 1.3zm.1-2.5c-3-1.8-7.9-2-10.8-1.1-.6.2-1.2-.1-1.4-.7-.2-.6.1-1.2.7-1.4 3.4-1 8.8-.7 12.3 1.4.5.3.7 1 .4 1.5-.3.6-.9.8-1.4.5z"/>' }
 };
@@ -607,8 +608,23 @@ function embedEl(l) {
   if (!fr.src) return linkTile(l);
   w.append(fr); return w;
 }
+/* Logo riêng cho liên kết: trong config thêm icon: "https://…/logo.png", color: "#5865f2" (color2 tuỳ chọn) */
+function shade(hex, f) {
+  let h = String(hex || "").replace("#", ""); if (h.length === 3) h = h.replace(/./g, "$&$&");
+  if (!/^[0-9a-f]{6}$/i.test(h)) return "#26136b";
+  const n = parseInt(h, 16); return "#" + [n >> 16 & 255, n >> 8 & 255, n & 255].map(v => Math.round(v * f).toString(16).padStart(2, "0")).join("");
+}
+function iconTile(l) {
+  const t = el("span", "ico"), c = l.color || "#7c5cff";
+  t.style.background = "linear-gradient(160deg," + c + "," + shade(c, .7) + ")"; t.style.color = "#fff";
+  const im = new Image(); im.alt = ""; im.decoding = "async"; im.draggable = false; im.referrerPolicy = "no-referrer";
+  im.style.cssText = "width:70%;height:70%;object-fit:contain";
+  im.onerror = () => { im.remove(); t.innerHTML = svg("link", 26); };
+  im.src = l.icon; t.append(im); return t;
+}
 function linkTile(l) {
-  const t = el("article", "tile rv"); t.append(appTile(l.app));
+  const t = el("article", "tile rv"); t.append(l.icon ? iconTile(l) : appTile(l.app));
+  if (l.icon) { const c = l.color || "#7c5cff"; t.dataset.c1 = c; t.dataset.c2 = l.color2 || shade(c, .35); }
   const tx = el("div", "tx"); tx.append(el("b", "", l.name), el("small", "", l.desc || "")); t.append(tx);
   const a = el("a", "stretch"); ext(a, l.url); a.setAttribute("aria-label", l.name); t.append(a);
   const cp = el("button", "go"); cp.type = "button"; cp.innerHTML = svg("copy", 17); cp.setAttribute("aria-label", "Chép link " + l.name); cp.title = "Chép link";

@@ -55,10 +55,10 @@
   const paintTiles = () => view.querySelectorAll(".bento>.tile:not([data-p])").forEach(t => {
     t.dataset.p = "1";
     const name = ((t.querySelector(".tx b") || {}).textContent || "").toLowerCase(), ico = t.querySelector(".ico");
-    let c = Object.keys(BRAND).find(k => name.includes(k)); c = c && BRAND[c];
+    let c = t.dataset.c1 ? [t.dataset.c1, t.dataset.c2] : (Object.keys(BRAND).find(k => name.includes(k)) && BRAND[Object.keys(BRAND).find(k => name.includes(k))]);
     if (!c && ico) { const m = getComputedStyle(ico).backgroundImage.match(/rgba?\([^)]*\)/g); if (m && m.length) c = [m[0], m[m.length - 1]]; }
     if (c) { t.style.setProperty("--c1", c[0]); t.style.setProperty("--c2", c[1]); }
-    const svg = ico && ico.querySelector("svg");
+    const svg = ico && (ico.querySelector("svg") || ico.querySelector("img"));
     if (svg) { const w = document.createElement("span"); w.className = "wm"; w.setAttribute("aria-hidden", "true"); w.append(svg.cloneNode(true)); t.prepend(w); }
   });
 

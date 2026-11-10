@@ -917,6 +917,12 @@ const CONFIG = {
           desc: "@kaitouaonhayy",
           app: "youtube",
           url: "https://youtube.com/@kaitouaonhayy"
+        },
+        {
+          name: "Discord",
+          desc: "Nhắn tin riêng",
+          app: "discord",
+          url: "https://discord.com/users/1342988693379747843"
         }
       ]
     }
