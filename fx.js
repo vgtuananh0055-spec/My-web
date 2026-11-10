@@ -48,22 +48,60 @@
   (counted ? call("get").catch(() => call("hit")) : call("hit")).then(apply)
     .catch(() => { failed = true; view.querySelectorAll(".visit").forEach(showVisits); });
 
+
+  // Tô màu thương hiệu + hình mờ cho ô liên kết ở tab Thông tin
+  const BRAND = { facebook:["#1d6bff","#031d52"], tiktok:["#ff2d78","#3a0d5c"], telegram:["#2aa7e0","#0c3a55"], youtube:["#ff3b3b","#4a0606"],
+                  instagram:["#f5337a","#4b1670"], discord:["#5865f2","#1a1d5e"], zalo:["#1b6bff","#062a6b"], github:["#3a3f4b","#0d0f14"] };
+  const paintTiles = () => view.querySelectorAll(".bento>.tile:not([data-p])").forEach(t => {
+    t.dataset.p = "1";
+    const name = ((t.querySelector(".tx b") || {}).textContent || "").toLowerCase(), ico = t.querySelector(".ico");
+    let c = Object.keys(BRAND).find(k => name.includes(k)); c = c && BRAND[c];
+    if (!c && ico) { const m = getComputedStyle(ico).backgroundImage.match(/rgba?\([^)]*\)/g); if (m && m.length) c = [m[0], m[m.length - 1]]; }
+    if (c) { t.style.setProperty("--c1", c[0]); t.style.setProperty("--c2", c[1]); }
+    const svg = ico && ico.querySelector("svg");
+    if (svg) { const w = document.createElement("span"); w.className = "wm"; w.setAttribute("aria-hidden", "true"); w.append(svg.cloneNode(true)); t.prepend(w); }
+  });
+
+  // ===== Từ bản mẫu: tàn lửa nền, thẻ hiện dần khi cuộn, dock giãn khi chuyển tab =====
+  if (!rm) {
+    const bg = document.querySelector(".bgfx");
+    if (bg) for (let i = 0, n = fine ? 22 : 14; i < n; i++) {
+      const e = document.createElement("span"); e.className = "em";
+      e.style.cssText = `--x:${Math.random() * 100}%;--z:${3 + Math.random() * 5 | 0}px;--t:${7 + Math.random() * 9}s;--dl:${-Math.random() * 14}s;--dx:${(Math.random() - .5) * 140}px`;
+      bg.append(e);
+    }
+  }
+  let io = null;
+  if (!rm && "IntersectionObserver" in window) {
+    root.classList.add("js-rv");
+    io = new IntersectionObserver(es => {
+      let k = 0;
+      es.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top || a.boundingClientRect.left - b.boundingClientRect.left)
+        .forEach(e => { e.target.style.setProperty("--d", Math.min(k++, 6)); e.target.classList.add("in"); io.unobserve(e.target); });
+    }, { threshold: .08 });
+  }
+  let rs = 0;
+  const revealScan = () => { if (!io || rs) return; rs = requestAnimationFrame(() => { rs = 0;
+    view.querySelectorAll(".card:not([data-r]),.tile:not([data-r])").forEach(c => { c.dataset.r = "1"; io.observe(c); }); }); };
+  new MutationObserver(revealScan).observe(view, { childList: true, subtree: true });
+  revealScan();
+  const stretchDock = () => { const g = document.querySelector(".seg .glider"); if (!g) return; g.classList.remove("stretch"); void g.offsetWidth; g.classList.add("stretch"); };
   let cur = idx();
 
   addEventListener("hashchange", () => {
-    const n = idx(); if (n !== cur) { root.style.setProperty("--dir", n > cur ? 1 : -1); buzz(8); cur = n; }
+    const n = idx(); if (n !== cur) { root.style.setProperty("--dir", n > cur ? 1 : -1); buzz(8); cur = n; stretchDock(); }
     scrollTo({top:0,behavior:"instant"}); // cuộn lên đầu ngay, tránh cuộn mượt trong lúc chuyển
   });
 
   new MutationObserver(() => {
     if (!view.firstChild) return;
-    addVisit();
+    addVisit(); paintTiles();
     view.querySelectorAll("img").forEach(im => { im.decoding = "async"; });
     if (rm) return;
     const d = +root.style.getPropertyValue("--dir") || 1;
     view.animate([{opacity:.2,transform:`translateX(${d*40}px)`},{opacity:1,transform:"none"}], {duration:300,easing:"cubic-bezier(.22,1,.36,1)"});
   }).observe(view, {childList:true});
-  addVisit();
+  addVisit(); paintTiles();
 
   // Vuốt trái/phải đổi tab (không dùng khi đang cuộn dọc / trong khung cuộn ngang)
   let x0 = null, y0, lock = null, dx = 0, raf = 0;

@@ -86,10 +86,6 @@ h1,h2,h3,.brand b{font-family:var(--disp);letter-spacing:-.02em}
 /* Bỏ backdrop-filter trên mọi phần tử luôn hiển thị (nguyên nhân lag chính khi chuyển tab) */
 .glass,.card,.tile,.fchip,.ib,.favb,.htile,.sbox,.sortw,.lay,.seg,.smedia .nav,.hero .kick{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
 :root[data-theme=dark] .card,:root[data-theme=dark] .tile,:root[data-theme=dark] .fchip,:root[data-theme=dark] .sbox{background-color:rgba(24,19,40,.9)}
-/* Thẻ hiện cùng lúc với trang, không còn trễ theo thứ tự */
-.card,.tile{animation:cardin .3s ease both!important;animation-delay:0s!important}
-@keyframes cardin{from{opacity:0;transform:translateY(12px)}}
-.card:nth-child(n+7),.tile:nth-child(n+7){animation:none!important}
 html{scroll-behavior:auto}
 .card,.tile,.fchip{contain:layout style}
 
@@ -112,3 +108,55 @@ html{scroll-behavior:auto}
 .visit i::after{content:"";position:absolute;inset:0;border-radius:50%;background:#3dff7a;animation:ping 2s ease-out infinite}
 @keyframes ping{from{transform:scale(1);opacity:.65}to{transform:scale(2.8);opacity:0}}
 @media (prefers-reduced-motion:reduce){.visit i::after{animation:none}}
+
+/* ===== Tab Thông tin: ô thương hiệu vuông, màu riêng, góc khuyết kiểu pixel ===== */
+.bento:has(>.tile){grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.bento>.tile{--c1:#7c5cff;--c2:#26136b;aspect-ratio:1/1;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:0;padding:16px;border:0;border-radius:0;
+  background:linear-gradient(150deg,rgba(0,0,0,.14),rgba(0,0,0,.5)),linear-gradient(150deg,var(--c1),var(--c2))!important;
+  clip-path:polygon(0 12px,10px 12px,10px 0,calc(100% - 10px) 0,calc(100% - 10px) 12px,100% 12px,100% calc(100% - 12px),calc(100% - 10px) calc(100% - 12px),calc(100% - 10px) 100%,10px 100%,10px calc(100% - 12px),0 calc(100% - 12px));
+  transition:transform .35s var(--ease)}
+.bento>.tile .ico{position:absolute;top:18px;left:16px;width:62px;height:62px;border-radius:19px;z-index:1}
+.bento>.tile .ico svg{width:34px;height:34px}
+.bento>.tile .tx{flex:none;width:100%;padding-right:28px;position:relative;z-index:1}
+.bento>.tile .tx b{font-family:var(--disp);font-size:20px;font-weight:800;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.3)}
+.bento>.tile .tx small{color:rgba(255,255,255,.82);font-size:13px}
+.bento>.tile .go{position:absolute;right:12px;bottom:14px;width:30px;height:30px;background:rgba(0,0,0,.28);border:0;color:#fff}
+.bento>.tile .wm{position:absolute;right:-16px;top:-4px;width:130px;height:130px;opacity:.16;color:#fff;pointer-events:none}
+.bento>.tile .wm svg{width:100%;height:100%}
+.bento>.tile:active{transform:scale(.97)}
+@media (hover:hover){.bento>.tile:hover{transform:translateY(-4px);border-color:transparent}}
+
+/* ===== TỪ BẢN MẪU: vệt sáng + animation ===== */
+@keyframes sheen{60%,100%{transform:translateX(70%)}}
+@keyframes sh{to{background-position:-200% 0}}
+@keyframes rise{8%{opacity:.9}100%{transform:translate3d(var(--dx),-108vh,0) rotate(200deg);opacity:0}}
+@keyframes up{from{opacity:0;transform:translateY(30px) scale(.94)}}
+@keyframes fl{50%{transform:translateY(-12px)}}
+@keyframes stretch{40%{scale:1.25 .9}}
+
+/* Vệt sáng quét chéo: ô liên kết (lệch nhịp từng ô) + banner (chậm hơn) */
+.bento>.tile::after,.hero::before{content:"";position:absolute;inset:-60%;pointer-events:none;z-index:2;will-change:transform;
+  background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.3) 50%,transparent 58%);
+  transform:translateX(-70%);animation:sheen 5s ease-in-out infinite;animation-delay:calc(var(--d,0)*.9s)}
+.hero::before{background:linear-gradient(115deg,transparent 44%,rgba(255,255,255,.18) 50%,transparent 56%);animation-duration:7s;animation-delay:1.2s}
+.bento>.tile:nth-child(2){--d:1}.bento>.tile:nth-child(3){--d:2}.bento>.tile:nth-child(4){--d:3}.bento>.tile:nth-child(5){--d:4}.bento>.tile:nth-child(n+6){--d:5}
+
+/* Chữ thương hiệu chuyển màu lửa */
+.brand b{background:linear-gradient(100deg,#ff2d00,#ffd000,#ff2d00);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 5s linear infinite}
+
+/* Tàn lửa bay lên ở nền */
+.bgfx .em{position:absolute;bottom:-12px;left:var(--x);width:var(--z);height:var(--z);background:linear-gradient(#ffd000,#ff4a00);box-shadow:0 0 8px #ff6a00;opacity:0;animation:rise var(--t) linear var(--dl) infinite;will-change:transform,opacity}
+
+/* Thẻ hiện dần khi cuộn tới (fx.js gắn .in theo từng đợt, lệch nhịp 60ms) */
+html.js-rv .card,html.js-rv .tile{animation:up .7s cubic-bezier(.2,.9,.2,1) backwards paused!important;animation-delay:calc(var(--d,0)*60ms)!important}
+html.js-rv .card.in,html.js-rv .tile.in{animation-play-state:running!important}
+
+/* Dock giãn ra khi chuyển tab; nút và biểu tượng nảy lò xo (không xoay chữ) */
+.glider.stretch{animation:stretch .5s ease}
+.ib{transition:transform .35s cubic-bezier(.3,1.6,.5,1)}.ib:active{transform:scale(.86)}
+.bento>.tile .ico{transition:transform .5s cubic-bezier(.3,1.7,.5,1)}
+.bento>.tile:active .ico{transform:scale(1.14)}
+@media (hover:hover){.bento>.tile:hover .ico{transform:scale(1.1)}}
+.bento>.tile .go{transition:transform .45s cubic-bezier(.3,1.7,.5,1)}.bento>.tile:active .go{transform:translateY(4px) scale(.9)}
+.empty svg{animation:fl 3.2s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){html.js-rv .card,html.js-rv .tile{animation:none!important}.bento>.tile::after,.hero::before,.bgfx .em,.brand b,.empty svg{animation:none}.bgfx .em{display:none}}
