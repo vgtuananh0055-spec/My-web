@@ -928,7 +928,7 @@ const CONFIG = {
     }
   },
   welcome: {
-    active: true,
+    active: false,
     title: "Hello - KaiTouu đây",
     desc: "Đối với Bedrock thì toàn bộ được lấy từ marketplace (shop chinhd thức) của minecraft nên chắc có thể web sẽ bị ăn gậy\nKo có Addon hay texturepack nào thì anh em cứ nói nha\nVÀ HÃY PHÂN BIỆT ĐƯỢC GIỮA ADDON, TEXTUREPACK VỚI MOD VÀ RESOURCES PACK",
     btn: "Đã hiểu & Tiếp tục"
