@@ -523,7 +523,7 @@ const CONFIG = {
             {
               title: "Gui |Medieval Shop GUI (ShopGui+)",
               subtitle: "Nguồn MCModels",
-              description: "CREATED BY[Turtle Pixels](https://mcmodels.net/vendors/53/turtle-pixels)56 products · 63 followers",
+              description: "CREATED BY[Turtle Pixels]",
               image: "https://api.mcmodels.net/storage/product-images/9409/01JXFSEJT55GQNF6Y9FH0VJ9JZ.png",
               source: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui",
               actions: [
@@ -541,6 +541,26 @@ const CONFIG = {
               ],
               metaExtra: "Nguồn MCModels",
               marketplaceUrl: "https://mcmodels.net/products/14399/medieval-shop-gui-shopgui"
+            },
+            {
+              title: "Spectra Studios | Animated PlayerAuction UI + Upgrade Menu",
+              subtitle: "Nguồn MCModels",
+              description: "2. [Products](https://mcmodels.net/products)",
+              image: "https://api.mcmodels.net/storage/product-images/13612/01JN9T4ER1XDJJC9376TFRQ7V6.webp",
+              source: "https://mcmodels.net/products/13612/spectra-studios-animated-playerauction-ui-upgrade-menu?tab=reviews",
+              actions: [
+                {
+                  label: "5.000 VND",
+                  url: "https://mcmodels.net/products/13612/spectra-studios-animated-playerauction-ui-upgrade-menu?tab=reviews",
+                  primary: true
+                }
+              ],
+              banner: "https://dashboard.mcmodels.net/storage/images/480f1a98-4396-459e-9c16-24403bd21893.png",
+              previewImages: [
+                "https://dashboard.mcmodels.net/storage/images/480f1a98-4396-459e-9c16-24403bd21893.png"
+              ],
+              metaExtra: "Nguồn MCModels",
+              marketplaceUrl: "https://mcmodels.net/products/13612/spectra-studios-animated-playerauction-ui-upgrade-menu?tab=reviews"
             }
           ]
         },
