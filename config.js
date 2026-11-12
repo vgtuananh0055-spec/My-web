@@ -550,8 +550,8 @@ const CONFIG = {
               source: "https://mcmodels.net/products/13612/spectra-studios-animated-playerauction-ui-upgrade-menu?tab=reviews",
               actions: [
                 {
-                  label: "5.000 VND",
-                  url: "https://mcmodels.net/products/13612/spectra-studios-animated-playerauction-ui-upgrade-menu?tab=reviews",
+                  label: "10.000 VND",
+                  url: "https://discord.com/users/1342988693379747843",
                   primary: true
                 }
               ],
@@ -684,7 +684,7 @@ const CONFIG = {
               source: "https://mcmodels.net/products/15599/dragon-mecha-overlord",
               actions: [
                 {
-                  label: "5.000 VND",
+                  label: "10.000 VND",
                   url: "https://discord.com/users/1342988693379747843",
                   primary: true
                 }
