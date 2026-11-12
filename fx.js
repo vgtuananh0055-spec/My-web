@@ -27,7 +27,9 @@
     s.src = url + "?callback=" + cb; document.head.append(s);
     setTimeout(() => { if (window[cb]) { done(); no(new Error("timeout")); } }, 8000);
   });
-  const call = op => { const u = VBASE.replace("%OP%", op);
+  const API = CONFIG.visitApi || "";
+  const call = op => { if (API) return fetch(API + (op === "hit" ? (API.includes("?") ? "&" : "?") + "hit=1" : ""), { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+    const u = VBASE.replace("%OP%", op);
     return fetch(u, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).catch(() => jsonp(u)); };
   const showVisits = el => {
     const num = el.querySelector("b"); if (!num) return;
@@ -42,9 +44,10 @@
     const v = document.createElement("div"); v.className = "visit"; v.title = "Lượt truy cập"; v.setAttribute("aria-label", "Lượt truy cập");
     v.innerHTML = "<i></i><b>…</b>"; ctl.append(v); showVisits(v);
   };
-  let counted = false; try { counted = !!sessionStorage.getItem("kt_counted"); } catch (e) {}
+  const today = new Date().toISOString().slice(0, 10); let counted = ls_.get("kt_day") === today;
   const apply = j => { const n = +(j && j.value); if (!n) throw new Error("bad"); visits = n; ls_.set("kt_visits", n);
-    try { sessionStorage.setItem("kt_counted", "1"); } catch (e) {} animated = false; view.querySelectorAll(".visit").forEach(showVisits); };
+    ls_.set("kt_day", today); animated = false; view.querySelectorAll(".visit").forEach(showVisits); };
+  try { addVisit(); } catch (e) {}
   (counted ? call("get").catch(() => call("hit")) : call("hit")).then(apply)
     .catch(() => { failed = true; view.querySelectorAll(".visit").forEach(showVisits); });
 
