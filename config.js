@@ -655,6 +655,23 @@ const CONFIG = {
               ],
               metaExtra: "Nguồn MCModels",
               marketplaceUrl: "https://mcmodels.net/products/15636/nazguls-fantasy-weapons-vol-3?srsltid=AfmBOorerDTpiWorLl_7Rxfni9jK8k012ZReqYV5_JQFrdt2BUtSPghu"
+            },
+            {
+              title: "Dragon Mecha Overlord",
+              subtitle: "Nguồn MCModels",
+              description: "2. [Products](https://mcmodels.net/products)",
+              image: "https://api.mcmodels.net/storage/product-images/15599/01KDXJ4JQ30HXYQWJTGYHAT5YQ.gif",
+              source: "https://mcmodels.net/products/15599/dragon-mecha-overlord",
+              actions: [
+                {
+                  label: "5.000 VND",
+                  url: "https://discord.com/users/1342988693379747843",
+                  primary: true
+                }
+              ],
+              banner: "https://api.mcmodels.net/storage/product-images/15599/01KDXJ4JRSQNMSBKK9Y8CSN5S0.png",
+              metaExtra: "Nguồn MCModels",
+              marketplaceUrl: "https://mcmodels.net/products/15599/dragon-mecha-overlord"
             }
           ]
         }
