@@ -89,6 +89,12 @@
   new MutationObserver(revealScan).observe(view, { childList: true, subtree: true });
   revealScan();
   const stretchDock = () => { const g = document.querySelector(".seg .glider"); if (!g) return; g.classList.remove("stretch"); void g.offsetWidth; g.classList.add("stretch"); };
+
+  // Ảnh nền (globalBg) thành một lớp fixed riêng, không để app.js gắn vào body (nguyên nhân giật khi chuyển tab)
+  if (CONFIG.globalBg && !document.querySelector(".wall")) {
+    const w = document.createElement("div"); w.className = "wall";
+    w.style.backgroundImage = "url(" + JSON.stringify(CONFIG.globalBg) + ")"; document.body.prepend(w);
+  }
   let cur = idx();
 
   addEventListener("hashchange", () => {
