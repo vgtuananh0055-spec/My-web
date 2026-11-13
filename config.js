@@ -50,20 +50,26 @@ const CONFIG = {
               github: "https://github.com/ZalithLauncher/ZalithLauncher2"
             },
             {
-              title: "Kai-Launcher",
-              subtitle: "by KaiTouu",
-              description: "Launcher Minecraft Java cho Android. Bấm tải để lấy bản APK mới nhất.",
+              title: "Cryogenic-Launcher",
+              subtitle: "by RussoViller",
+              description: "A new Minecraft Launcher, based on Zalith Launcher 2, but with a more modern interface and more features.",
               image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png",
-              source: "https://github.com/vgtuananh0055-spec/KaiLauncher",
+              source: "https://github.com/RussoViller/Cryogenic-Launcher",
               actions: [
                 {
-                  label: "Tải bản mới nhất",
-                  url: "https://drive.google.com/uc?export=download&id=1eNocvN0ZyupX5Dg4iBGR92vJ7gVcYMhQ",
+                  label: "Tải xuống (CryogenicLauncher1.5.3)",
+                  url: "https://github.com/RussoViller/Cryogenic-Launcher/releases/download/CryogenicLauncher1.5.3/CryogenicLauncher-r1.5.3-arm64-v8a.apk",
                   primary: true
                 }
               ],
-              marketplaceUrl: "https://github.com/vgtuananh0055-spec/KaiLauncher",
-              github: "https://github.com/vgtuananh0055-spec/KaiLauncher"
+              banner: "https://opengraph.githubassets.com/1/RussoViller/Cryogenic-Launcher",
+              previewImages: [
+                "https://opengraph.githubassets.com/1/RussoViller/Cryogenic-Launcher",
+                "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png"
+              ],
+              metaExtra: "RussoViller · ⭐ 4 · CryogenicLauncher1.5.3",
+              marketplaceUrl: "https://github.com/RussoViller/Cryogenic-Launcher/tree/main",
+              github: "https://github.com/RussoViller/Cryogenic-Launcher"
             },
             {
               title: "RayLauncher",
