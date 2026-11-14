@@ -58,7 +58,7 @@ const CONFIG = {
               actions: [
                 {
                   label: "Tải xuống (CryogenicLauncher1.5.3)",
-                  url: "https://github.com/RussoViller/Cryogenic-Launcher/releases/download/CryogenicLauncher1.5.3/CryogenicLauncher-r1.5.3-arm64-v8a.apk",
+                  url: "https://github.com/RussoViller/Cryogenic-Launcher/releases/download/CryogenicLauncher1.5.5/CryogenicLauncher-r1.5.5-arm64-v8a.apk",
                   primary: true
                 }
               ],
