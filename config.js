@@ -911,6 +911,31 @@ const CONFIG = {
               ],
               metaExtra: "Minecraft Marketplace",
               marketplaceUrl: "https://www.minecraft.net/en-us/updates/wilderness-bound-drop"
+            },
+            {
+              title: "Super Satisfying Sounds 1.0 by Oreville Studios - Bedrock Explorer",
+              subtitle: "Nguồn Oreville Studios",
+              description: "Hãy làm cho thế giới của bạn trở nên sống động và thú vị hơn với bộ sưu tập âm thanh được nâng cao khổng lồ dành cho các khối, chuyển động, tương tác và hơn thế nữa!\n\n- Âm thanh phá vỡ, đặt và đập khối sống động và thú vị!\n\n- Âm thanh bước chân độc đáo",
+              image: "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/cd6fc047-1786-4a78-8aa7-48298b0b9bc1/supersatisfyingsounds_Thumbnail_0.jpg",
+              source: "https://www.minecraft.net/en-us/marketplace/pdp/oreville-studios/super-satisfying-sounds-1.0/dbc7cded-5a1f-4e64-bf63-4afaf3829ec2",
+              actions: [
+                {
+                  label: "Tải xuống",
+                  url: "https://drive.google.com/uc?export=download&id=1T4IzHkbN__6ITGcgCUrDQ34sQtahC5IO",
+                  primary: true
+                }
+              ],
+              banner: "https://www.bedrockexplorer.com/images/minecoin_icon.png",
+              previewImages: [
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/a52fc925-6a84-4626-88b4-ad5f47ebe9f0/supersatisfyingsounds_screenshot_3.jpg",
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/1733965c-f5cc-4b44-b5d0-3e73ac1144b7/supersatisfyingsounds_screenshot_4.jpg",
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/adfd9632-d8f8-472f-ba0a-63baa16f7bc3/supersatisfyingsounds_screenshot_5.jpg",
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/5ab18431-76ec-4a1d-a287-8f94c7be9eda/supersatisfyingsounds_screenshot_1.jpg",
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/43387ee0-d6c6-4237-95e0-3c303a19ea18/supersatisfyingsounds_screenshot_2.jpg",
+                "https://content1.prod.catalog.playfab.com/pf-namespace-b63a0803d3653643/cd6fc047-1786-4a78-8aa7-48298b0b9bc1/supersatisfyingsounds_Thumbnail_0.jpg"
+              ],
+              metaExtra: "Nguồn",
+              marketplaceUrl: "https://www.bedrockexplorer.com/@oreville-studios/super-satisfying-sounds-1-0"
             }
           ]
         },
