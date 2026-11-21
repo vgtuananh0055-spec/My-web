@@ -134,7 +134,7 @@ const CONFIG = {
               github: "https://github.com/ItsVynzzzz/AmberLauncher"
             },
             {
-              title: "starling",
+              title: "starling horizon launcher",
               subtitle: "by starling-client",
               description: "Starling, formerly Horizon Android: Android port of Horizon (Rust Minecraft 26.3) with Vulkan, editable touch controls and native .hmod mods.",
               image: "https://avatars.githubusercontent.com/u/352657321?v=4",
@@ -155,7 +155,7 @@ const CONFIG = {
               github: "https://github.com/starling-client/starling"
             },
             {
-              title: "nuxlabs",
+              title: "nux launcher",
               subtitle: "by IsraaDeveloper",
               description: "Launcher minecraft java untuk android dengan fitur yang lengkap",
               image: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
