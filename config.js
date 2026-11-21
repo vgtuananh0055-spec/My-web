@@ -50,6 +50,27 @@ const CONFIG = {
               github: "https://github.com/ZalithLauncher/ZalithLauncher2"
             },
             {
+              title: "ZalithLauncher2Plus",
+              subtitle: "by Star1xr",
+              description: "ZL2 with performance updates and key improvements",
+              image: "https://avatars.githubusercontent.com/u/166748405?v=4",
+              source: "https://github.com/Star1xr/ZalithLauncher2Plus",
+              actions: [
+                {
+                  label: "Tải xuống (build-83)",
+                  url: "https://github.com/Star1xr/ZalithLauncher2Plus/releases/download/build-83/ZalithLauncher.2.Plus-2.4.10-arm64-v8a.apk",
+                  primary: true
+                }
+              ],
+              banner: "https://opengraph.githubassets.com/1/Star1xr/ZalithLauncher2Plus",
+              previewImages: [
+                "https://opengraph.githubassets.com/1/Star1xr/ZalithLauncher2Plus"
+              ],
+              metaExtra: "Star1xr · ⭐ 154 · build-83 · Kotlin",
+              marketplaceUrl: "https://github.com/Star1xr/ZalithLauncher2Plus",
+              github: "https://github.com/Star1xr/ZalithLauncher2Plus"
+            },
+            {
               title: "Cryogenic-Launcher",
               subtitle: "by RussoViller",
               description: "A new Minecraft Launcher, based on Zalith Launcher 2, but with a more modern interface and more features.",
