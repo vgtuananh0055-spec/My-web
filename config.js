@@ -53,21 +53,20 @@ const CONFIG = {
               title: "Cryogenic-Launcher",
               subtitle: "by RussoViller",
               description: "A new Minecraft Launcher, based on Zalith Launcher 2, but with a more modern interface and more features.",
-              image: "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png",
+              image: "https://avatars.githubusercontent.com/u/252656082?v=4",
               source: "https://github.com/RussoViller/Cryogenic-Launcher",
               actions: [
                 {
-                  label: "Tải xuống (CryogenicLauncher1.5.3)",
-                  url: "https://github.com/RussoViller/Cryogenic-Launcher/releases/download/CryogenicLauncher1.5.5/CryogenicLauncher-r1.5.5-arm64-v8a.apk",
+                  label: "Tải xuống (CryogenicLauncher1.7.1)",
+                  url: "https://github.com/RussoViller/Cryogenic-Launcher/releases/download/CryogenicLauncher1.7.1/CryogenicLauncher-r1.7.1-arm64-v8a-IS.apk",
                   primary: true
                 }
               ],
               banner: "https://opengraph.githubassets.com/1/RussoViller/Cryogenic-Launcher",
               previewImages: [
-                "https://opengraph.githubassets.com/1/RussoViller/Cryogenic-Launcher",
-                "https://raw.githubusercontent.com/vgtuananh0055-spec/KaiLauncher/refs/heads/main/1793723519090.png"
+                "https://opengraph.githubassets.com/1/RussoViller/Cryogenic-Launcher"
               ],
-              metaExtra: "RussoViller · ⭐ 4 · CryogenicLauncher1.5.3",
+              metaExtra: "RussoViller · ⭐ 13 · CryogenicLauncher1.7.1",
               marketplaceUrl: "https://github.com/RussoViller/Cryogenic-Launcher/tree/main",
               github: "https://github.com/RussoViller/Cryogenic-Launcher"
             },
