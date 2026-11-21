@@ -45,7 +45,7 @@ const CONFIG = {
               previewImages: [
                 "https://opengraph.githubassets.com/1/ZalithLauncher/ZalithLauncher2"
               ],
-              metaExtra: "ZalithLauncher · ⭐ 2.189 · 2.8.2 · Kotlin",
+              metaExtra: "ZalithLauncher · ⭐ 2.283 · 2.8.2 · Kotlin",
               marketplaceUrl: "https://github.com/ZalithLauncher/ZalithLauncher2",
               github: "https://github.com/ZalithLauncher/ZalithLauncher2"
             },
@@ -78,8 +78,8 @@ const CONFIG = {
               source: "https://github.com/KedaMC/RayLauncher",
               actions: [
                 {
-                  label: "Tải xuống (v1.0-alpha6)",
-                  url: "https://github.com/KedaMC/RayLauncher/releases/download/v1.0-alpha6/RayLauncher-2.8.1-Alpha6-arm64-v8a.apk",
+                  label: "Tải xuống (v1.0-beta)",
+                  url: "https://github.com/KedaMC/RayLauncher/releases/download/v1.0-beta/RayLauncher-2.8.2-Beta-arm64-v8a.apk",
                   primary: true
                 }
               ],
@@ -87,20 +87,20 @@ const CONFIG = {
               previewImages: [
                 "https://opengraph.githubassets.com/1/KedaMC/RayLauncher"
               ],
-              metaExtra: "KedaMC · ⭐ 3 · v1.0-alpha6 · Kotlin",
+              metaExtra: "KedaMC · ⭐ 4 · v1.0-beta · Kotlin",
               marketplaceUrl: "https://github.com/KedaMC/RayLauncher",
               github: "https://github.com/KedaMC/RayLauncher"
             },
             {
               title: "AmberLauncher",
               subtitle: "by ItsVynzzzz",
-              description: "Launcher minecraft java untuk android dengan fitur yang lebih sedikit",
+              description: "Amber Launcher",
               image: "https://raw.githubusercontent.com/ItsVynzzzz/AmberLauncher/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
               source: "https://github.com/ItsVynzzzz/AmberLauncher",
               actions: [
                 {
-                  label: "Tải xuống (v0.1.0-beta.71)",
-                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/uji/AmberLauncher-0.1.0-beta.70.uji.162-64bit-arm64-v8a.apk",
+                  label: "Tải xuống (v1.3.1)",
+                  url: "https://github.com/ItsVynzzzz/AmberLauncher/releases/download/v1.3.1/AmberLauncher-1.3.1-32bit-armeabi-v7a-OLD-PHONES-ONLY.apk",
                   primary: true
                 }
               ],
@@ -108,40 +108,28 @@ const CONFIG = {
               previewImages: [
                 "https://opengraph.githubassets.com/1/ItsVynzzzz/AmberLauncher"
               ],
-              metaExtra: "ItsVynzzzz · ⭐ 3 · v0.1.0-beta.62 · Kotlin",
+              metaExtra: "ItsVynzzzz · ⭐ 3 · v1.3.1 · Kotlin",
               marketplaceUrl: "https://github.com/ItsVynzzzz/AmberLauncher",
               github: "https://github.com/ItsVynzzzz/AmberLauncher"
             },
             {
-              title: "Horizon launcher",
+              title: "starling",
               subtitle: "by starling-client",
               description: "Starling, formerly Horizon Android: Android port of Horizon (Rust Minecraft 26.3) with Vulkan, editable touch controls and native .hmod mods.",
               image: "https://avatars.githubusercontent.com/u/352657321?v=4",
               source: "https://github.com/starling-client/starling",
               actions: [
                 {
-                  label: "Tải xuống (v0.7.8)",
-                  url: "https://github.com/starling-client/starling/releases/download/v0.7.8/Horizon-Android-0.7.8-arm64-v8a.apk",
+                  label: "Tải xuống (v0.9.0)",
+                  url: "https://github.com/starling-client/starling/releases/download/v0.9.0/starling-0.9.0-arm64-v8a.apk",
                   primary: true
                 }
               ],
-              banner: "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
+              banner: "https://raw.githubusercontent.com/starling-client/starling/starling/docs/media/progress/100.svg",
               previewImages: [
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/joystick-fox.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/dpad-river.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/snow-landscape.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/third-person-desert.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/desert-panorama.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-menu.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/android/fujitsu-f03l-gameplay.png",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/banner.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-play.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/launcher-settings.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/sunset.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/survival.webp",
-                "https://raw.githubusercontent.com/starling-client/starling/android/docs/media/settings.webp"
+                "https://opengraph.githubassets.com/1/starling-client/starling"
               ],
-              metaExtra: "starling-client · ⭐ 730 · v0.7.8 · Rust",
+              metaExtra: "starling-client · ⭐ 1.216 · v0.9.0 · Rust",
               marketplaceUrl: "https://github.com/starling-client/starling",
               github: "https://github.com/starling-client/starling"
             },
@@ -153,16 +141,16 @@ const CONFIG = {
               source: "https://github.com/IsraaDeveloper/nuxlabs",
               actions: [
                 {
-                  label: "Tải xuống (v1.1.6)",
-                  url: "https://github.com/IsraaDeveloper/nuxlabs/releases/download/v1.1.6/nuxlauncher-v1.1.6.apk",
+                  label: "Tải xuống (v1.1.7)",
+                  url: "https://github.com/IsraaDeveloper/nuxlabs/releases/download/v1.1.7/nuxlauncher-v1.1.7.apk",
                   primary: true
                 }
               ],
-              banner: "https://raw.githubusercontent.com/IsraaDeveloper/nuxlabs/refs/heads/main/app/src/main/res/drawable/nux_icon.png",
+              banner: "https://opengraph.githubassets.com/1/IsraaDeveloper/nuxlabs",
               previewImages: [
                 "https://opengraph.githubassets.com/1/IsraaDeveloper/nuxlabs"
               ],
-              metaExtra: "IsraaDeveloper · ⭐ 6 · v1.1.6 · Kotlin",
+              metaExtra: "IsraaDeveloper · ⭐ 7 · v1.1.7 · Kotlin",
               marketplaceUrl: "https://github.com/IsraaDeveloper/nuxlabs",
               github: "https://github.com/IsraaDeveloper/nuxlabs"
             },
